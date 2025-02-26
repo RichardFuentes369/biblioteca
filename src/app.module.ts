@@ -18,14 +18,6 @@ import {
   UserModule, 
   AuthuserModule,
 } from './mod/index'
-import { AdministracionLibroModule } from './src/mod/libro/admin/administracion_libro/administracion_libro.module';
-import { AdministracionLibroModule } from './mod/libro/admin/administracion_libro/administracion_libro.module';
-import { StockModule } from './mod/libros/admin/stock/stock.module';
-import { StockModule } from './mod/book/admin/stock/stock.module';
-import { StockModule } from './mod/book/final/stock/stock.module';
-import { TagModule } from './mod/book/admin/tag/tag.module';
-import { LoanModule } from './mod/book_loan/admin/loan/loan.module';
-import { LoanModule } from './mod/book_loan/final/loan/loan.module';
 
 @Module({
   imports: [
@@ -51,10 +43,6 @@ import { LoanModule } from './mod/book_loan/final/loan/loan.module';
     AuthadminModule,
     UserModule,
     AuthuserModule,
-    AdministracionLibroModule,
-    StockModule,
-    TagModule,
-    LoanModule,
   ],
   controllers: [AppController],
   providers: [AppService],
