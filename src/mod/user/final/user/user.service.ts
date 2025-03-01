@@ -5,6 +5,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { Repository } from 'typeorm';
 import { User } from './entities/user.entity';
 import { PaginationDto } from '@global/dto/pagination.dto';
+import { FilterAnyFieldDto } from '@global/dto/filter-any-field.dto';
 
 @Injectable()
 export class UserService {
@@ -71,14 +72,14 @@ export class UserService {
     }
   }
 
-  async findOne(id: number) {
+  async findOne(filterAnyFieldDto: FilterAnyFieldDto) {
     let result = await this.userRepository.findOne({
-      where: [ {id : id}],
-      order: { id: 'DESC' }
+      where: [ {id : filterAnyFieldDto.id}],
+      order: { id: 'asc' }
     });
 
     if (!result) {
-      throw new NotFoundException(`No se encontraron registros asociados a la llave ${id} en nuestra base de datos.`);
+      throw new NotFoundException(`No se encontraron registros asociados a la llave ${filterAnyFieldDto.id} en nuestra base de datos.`);
     }
 
     let dataMostrar = {
@@ -118,13 +119,13 @@ export class UserService {
     };
   }
   
-  async update(id: number, updateUserDto: UpdateUserDto) {
+  async update(updateUserDto: UpdateUserDto) {
     const property = await this.userRepository.findOne({
-      where: { id }
+      where: [{ id: updateUserDto.id }]
     });
 
     if(!property){
-      throw new NotFoundException(`No se encontraron registros asociados a la llave ${id} en nuestra base de datos.`);
+      throw new NotFoundException(`No se encontraron registros asociados a la llave ${updateUserDto.id} en nuestra base de datos.`);
     }
 
     if(updateUserDto.email){
@@ -145,7 +146,7 @@ export class UserService {
     });
 
     let dataMostrar = {
-      "id": id, 
+      "id": updateUserDto.id, 
       "firstName": updateUserDto.firstName, 
       "lastName": updateUserDto.lastName, 
       "email": updateUserDto.email,
@@ -158,18 +159,18 @@ export class UserService {
     };
   }
 
-  async remove(id: number) {
+  async remove(filterAnyFieldDto: FilterAnyFieldDto) {
     const property = await this.userRepository.findOne({
-      where: { id }
+      where: [{ id: filterAnyFieldDto.id }]
     });
 
     if(!property){
-      throw new NotFoundException(`No se encontraron registros asociados a la llave ${id} en nuestra base de datos.`);
+      throw new NotFoundException(`No se encontraron registros asociados a la llave ${filterAnyFieldDto.id} en nuestra base de datos.`);
     }
 
-    if(this.userRepository.delete(id)){
+    if(this.userRepository.delete(filterAnyFieldDto.id)){
       return {
-        message: `Usuario con id ${id} eliminado, correctamente`,
+        message: `Usuario con id ${filterAnyFieldDto.id} eliminado, correctamente`,
         result: [],
       };
     }

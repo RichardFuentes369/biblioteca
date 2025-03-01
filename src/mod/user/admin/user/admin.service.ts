@@ -5,6 +5,7 @@ import { UpdateAdminDto } from './dto/update-admin.dto';
 import { Repository } from 'typeorm';
 import { Admin } from './entities/admin.entity';
 import { PaginationDto } from '@global/dto/pagination.dto';
+import { FilterAnyFieldDto } from '@global/dto/filter-any-field.dto';
 
 @Injectable()
 export class AdminService {
@@ -71,14 +72,14 @@ export class AdminService {
     }
   }
 
-  async findOne(id: number) {
+  async findOne(filterAnyFieldDto: FilterAnyFieldDto) {
     let result = await this.adminRepository.findOne({
-      where: [ {id : id}],
-      order: { id: 'DESC' }
+      where: [ {id : filterAnyFieldDto.id}],
+      order: { id: 'asc' }
     });
 
     if (!result) {
-      throw new NotFoundException(`No se encontraron registros asociados a la llave ${id} en nuestra base de datos.`);
+      throw new NotFoundException(`No se encontraron registros asociados a la llave ${filterAnyFieldDto.id} en nuestra base de datos.`);
     }
 
     let dataMostrar = {
@@ -118,13 +119,13 @@ export class AdminService {
     };
   }
 
-  async update(id: number, updateAdminDto: UpdateAdminDto) {
+  async update(updateAdminDto: UpdateAdminDto) {
     const property = await this.adminRepository.findOne({
-      where: { id }
+      where: [{ id: updateAdminDto.id }]
     });
 
     if(!property){
-      throw new NotFoundException(`No se encontraron registros asociados a la llave ${id} en nuestra base de datos.`);
+      throw new NotFoundException(`No se encontraron registros asociados a la llave ${updateAdminDto.id} en nuestra base de datos.`);
     }
 
     if(updateAdminDto.email){
@@ -145,7 +146,7 @@ export class AdminService {
     });
 
     let dataMostrar = {
-      "id": id, 
+      "id": updateAdminDto.id, 
       "firstName": updateAdminDto.firstName, 
       "lastName": updateAdminDto.lastName, 
       "email": updateAdminDto.email,
@@ -158,18 +159,18 @@ export class AdminService {
     };
   }
 
-  async remove(id: number) {
+  async remove(filterAnyFieldDto: FilterAnyFieldDto) {
     const property = await this.adminRepository.findOne({
-      where: { id }
+      where: [ {id : filterAnyFieldDto.id}]
     });
 
     if(!property){
-      throw new NotFoundException(`No se encontraron registros asociados a la llave ${id} en nuestra base de datos.`);
+      throw new NotFoundException(`No se encontraron registros asociados a la llave ${filterAnyFieldDto.id} en nuestra base de datos.`);
     }
 
-    if(this.adminRepository.delete(id)){
+    if(this.adminRepository.delete(filterAnyFieldDto.id)){
       return {
-        message: `Usuario con id ${id} eliminado, correctamente`,
+        message: `Usuario con id ${filterAnyFieldDto.id} eliminado, correctamente`,
         result: [],
       };
     }

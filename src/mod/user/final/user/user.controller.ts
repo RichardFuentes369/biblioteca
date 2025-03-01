@@ -7,6 +7,7 @@ import { PaginationDto } from '@global/dto/pagination.dto';
 import { ApiTags } from '@nestjs/swagger';
 
 import { FinalGuard } from '@guard/final/final.guard';
+import { FilterAnyFieldDto } from '@global/dto/filter-any-field.dto';
 
 @Controller('user')
 export class UserController {
@@ -25,20 +26,20 @@ export class UserController {
   }
   
   @ApiTags('user')
-  @Get('obtener-usuario/:id')
-  findOne(@Param('id') id: string) {
-    return this.userService.findOne(+id);
+  @Get('obtener-usuario')
+  findOne(@Query() filterAnyFieldDto: FilterAnyFieldDto) {
+    return this.userService.findOne(filterAnyFieldDto);
   }
   
   @ApiTags('user')
-  @Patch('editar-usuario/:id')
-  update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
-    return this.userService.update(+id, updateUserDto);
+  @Patch('editar-usuario')
+  update(@Body() updateUserDto: UpdateUserDto) {
+    return this.userService.update(updateUserDto);
   }
   
   @ApiTags('user')
-  @Delete('eliminar-usuario/:id')
-  remove(@Param('id') id: string) {
-    return this.userService.remove(+id);
+  @Delete('eliminar-usuario')
+  remove(@Query() filterAnyFieldDto: FilterAnyFieldDto) {
+    return this.userService.remove(filterAnyFieldDto);
   }
 }

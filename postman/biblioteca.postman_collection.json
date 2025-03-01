@@ -161,7 +161,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "localhost:3000/api/admin/obtener-administrador/1",
+											"raw": "localhost:3000/api/admin/obtener-administrador?id=1",
 											"host": [
 												"localhost"
 											],
@@ -169,8 +169,13 @@
 											"path": [
 												"api",
 												"admin",
-												"obtener-administrador",
-												"1"
+												"obtener-administrador"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "1"
+												}
 											]
 										}
 									},
@@ -183,7 +188,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"firstName\": \"Natalia\",\r\n    \"lastName\": \"Villamizar Silva\",\r\n    \"password\": \"Qwerty9601\",\r\n    \"email\": \"admin22@correo.com\",\r\n    \"isActive\": true\r\n}",
+											"raw": "{\r\n    \"firstName\": \"Rogelio\",\r\n    \"lastName\": \"Pataquiva Tocasuche\",\r\n    \"password\": \"Qwerty9601\",\r\n    \"email\": \"admin3@correo.com\",\r\n    \"isActive\": true\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -211,7 +216,7 @@
 										"method": "DELETE",
 										"header": [],
 										"url": {
-											"raw": "localhost:3000/api/admin/eliminar-admininistrador/15",
+											"raw": "localhost:3000/api/admin/eliminar-admininistrador?id=16",
 											"host": [
 												"localhost"
 											],
@@ -219,8 +224,13 @@
 											"path": [
 												"api",
 												"admin",
-												"eliminar-admininistrador",
-												"15"
+												"eliminar-admininistrador"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "16"
+												}
 											]
 										}
 									},
@@ -233,7 +243,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"firstName\": \"Admin121\",\r\n    \"lastName\": \"Principal\",\r\n    \"email\": \"admin22@correo.com\",\r\n    \"isActive\": false\r\n}",
+											"raw": "{\r\n    \"id\": 17,\r\n    \"firstName\": \"Admin121\",\r\n    \"lastName\": \"Principal\",\r\n    \"email\": \"admin22@correo.com\",\r\n    \"isActive\": false\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -241,7 +251,7 @@
 											}
 										},
 										"url": {
-											"raw": "localhost:3000/api/admin/editar-administrador/13",
+											"raw": "localhost:3000/api/admin/editar-administrador",
 											"host": [
 												"localhost"
 											],
@@ -249,8 +259,7 @@
 											"path": [
 												"api",
 												"admin",
-												"editar-administrador",
-												"13"
+												"editar-administrador"
 											]
 										}
 									},
@@ -319,7 +328,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "localhost:3000/api/user/obtener-usuario/1",
+											"raw": "localhost:3000/api/user/obtener-usuario?id=1",
 											"host": [
 												"localhost"
 											],
@@ -327,8 +336,13 @@
 											"path": [
 												"api",
 												"user",
-												"obtener-usuario",
-												"1"
+												"obtener-usuario"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "1"
+												}
 											]
 										}
 									},
@@ -341,7 +355,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"firstName\": \"Usuario1\",\r\n    \"lastName\": \"Gates\",\r\n    \"password\": \"Qwerty9601\",\r\n    \"email\": \"user1@gmail.com\",\r\n    \"isActive\": true\r\n}",
+											"raw": "{\r\n    \"firstName\": \"Usuario4\",\r\n    \"lastName\": \"Gates\",\r\n    \"password\": \"Qwerty9601\",\r\n    \"email\": \"user4@gmail.com\",\r\n    \"isActive\": true\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -369,7 +383,7 @@
 										"method": "DELETE",
 										"header": [],
 										"url": {
-											"raw": "localhost:3000/api/user/eliminar-usuario/4",
+											"raw": "localhost:3000/api/user/eliminar-usuario?id=4",
 											"host": [
 												"localhost"
 											],
@@ -377,8 +391,13 @@
 											"path": [
 												"api",
 												"user",
-												"eliminar-usuario",
-												"4"
+												"eliminar-usuario"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "4"
+												}
 											]
 										}
 									},
@@ -391,7 +410,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"firstName\": \"Javier\",\r\n    \"lastName\": \"Baron\",\r\n    \"isActive\": true\r\n}",
+											"raw": "{\r\n    \"id\": 3,\r\n    \"firstName\": \"Javier\",\r\n    \"lastName\": \"Baron\",\r\n    \"isActive\": true\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -399,7 +418,7 @@
 											}
 										},
 										"url": {
-											"raw": "localhost:3000/api/user/editar-usuario/4",
+											"raw": "localhost:3000/api/user/editar-usuario",
 											"host": [
 												"localhost"
 											],
@@ -407,8 +426,7 @@
 											"path": [
 												"api",
 												"user",
-												"editar-usuario",
-												"4"
+												"editar-usuario"
 											]
 										}
 									},
