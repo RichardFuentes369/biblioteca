@@ -5,4 +5,7 @@ export { AuthuserModule } from './user/final/auth/auth.module'
 export { UserModule } from './user/final/user/user.module';
 
 
+export { StockModule } from './book/admin/stock/stock.module';
+
+
 

@@ -17,6 +17,7 @@ import {
   AuthadminModule, 
   UserModule, 
   AuthuserModule,
+  StockModule
 } from './mod/index'
 
 @Module({
@@ -43,6 +44,7 @@ import {
     AuthadminModule,
     UserModule,
     AuthuserModule,
+    StockModule
   ],
   controllers: [AppController],
   providers: [AppService],

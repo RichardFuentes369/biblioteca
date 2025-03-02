@@ -22,5 +22,5 @@ export class PaginationDto {
     @IsOptional()
     @IsString()
     @IsEnum(Order)
-    order: string;
+    order?: string;
 }

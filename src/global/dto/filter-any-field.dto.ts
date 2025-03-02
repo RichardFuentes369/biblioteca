@@ -1,5 +1,5 @@
 // import { Transform } from "class-transformer";
-import { IsString, IsBoolean, IsNumber, IsEmail, IsPositive, IsOptional, IsEnum } from "class-validator";
+import { IsString, IsBoolean, IsNumber, IsEmail, IsPositive, IsOptional, IsEnum, Min } from "class-validator";
 
 
 enum Order {
@@ -10,9 +10,27 @@ enum Order {
 export class FilterAnyFieldDto {
 
     @IsPositive()
+    @IsOptional()
     @IsNumber()
     // @Transform(({value}) => value.trim())
-    id: number;
+    id?: number;
+
+    @IsOptional()
+    @IsString()
+    fields?: string;
+
+    @IsOptional()
+    @IsString()
+    values?: string;
+    
+    @IsPositive()
+    @IsNumber()
+    @Min(1)
+    limit?: number;
+
+    @IsNumber()
+    @Min(1)
+    page?: number;
 
     @IsOptional()
     @IsString()
@@ -22,7 +40,6 @@ export class FilterAnyFieldDto {
     @IsString()
     @IsEnum(Order)
     order?: string;
-    
 }
 
 
