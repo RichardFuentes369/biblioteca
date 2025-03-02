@@ -24,13 +24,19 @@ export class AdminController {
   @Get()
   // @UseGuards(AdminGuard)
   findAll(@Query() paginationDto: PaginationDto) {
-    return this.adminService.findAll(paginationDto);
+    return this.adminService.findAll('', paginationDto);
   }
 
   @ApiTags('admin')
   @Get('obtener-administrador')
   findOne(@Query() filterForId: FilterForId) {
     return this.adminService.findOne(filterForId);
+  }
+
+  @ApiTags('admin')
+  @Get('filtro-administrador')
+  filterAdmins(@Query() filterAnyFieldDto: FilterAnyFieldDto) {
+    return this.adminService.filterAdmins(filterAnyFieldDto);
   }
 
   @ApiTags('admin')

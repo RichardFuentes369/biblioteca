@@ -211,6 +211,52 @@
 									"response": []
 								},
 								{
+									"name": "getAdmins-filter",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3000/api/admin/filtro-administrador?fields=email&values=admin22@correo.com&page=1&limit=10&field=id&order=asc",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"admin",
+												"filtro-administrador"
+											],
+											"query": [
+												{
+													"key": "fields",
+													"value": "email"
+												},
+												{
+													"key": "values",
+													"value": "admin22@correo.com"
+												},
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "limit",
+													"value": "10"
+												},
+												{
+													"key": "field",
+													"value": "id"
+												},
+												{
+													"key": "order",
+													"value": "asc"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
 									"name": "deleteAdmin",
 									"request": {
 										"method": "DELETE",
@@ -431,6 +477,52 @@
 										}
 									},
 									"response": []
+								},
+								{
+									"name": "getUsuarios-filter",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3000/api/user/filtro-usuario?fields=id&values=1&page=1&limit=10&field=id&order=asc",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"user",
+												"filtro-usuario"
+											],
+											"query": [
+												{
+													"key": "fields",
+													"value": "id"
+												},
+												{
+													"key": "values",
+													"value": "1"
+												},
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "limit",
+													"value": "10"
+												},
+												{
+													"key": "field",
+													"value": "id"
+												},
+												{
+													"key": "order",
+													"value": "asc"
+												}
+											]
+										}
+									},
+									"response": []
 								}
 							]
 						},
@@ -528,6 +620,129 @@
 							]
 						}
 					]
+				}
+			]
+		},
+		{
+			"name": "book",
+			"item": [
+				{
+					"name": "admin",
+					"item": [
+						{
+							"name": "getBooks-filter",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/stock/filtro-libro?fields=id|languague|author&values=257|English|Harper Lee&page=1&limit=10&field=id&order=asc",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"stock",
+										"filtro-libro"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "id|languague|author"
+										},
+										{
+											"key": "values",
+											"value": "257|English|Harper Lee"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "field",
+											"value": "id"
+										},
+										{
+											"key": "order",
+											"value": "asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getBooks-id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/stock/obtener-libro?id=256",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"stock",
+										"obtener-libro"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "256"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getBooks",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/stock?page=1&limit=10&field=id&order=asc",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"stock"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "field",
+											"value": "id"
+										},
+										{
+											"key": "order",
+											"value": "asc"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "final",
+					"item": []
 				}
 			]
 		}

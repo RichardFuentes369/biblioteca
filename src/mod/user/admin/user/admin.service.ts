@@ -2,7 +2,7 @@ import { HttpStatus, Inject, Injectable, NotFoundException } from '@nestjs/commo
 import { CreateAdminDto } from './dto/create-admin.dto';
 import { UpdateAdminDto } from './dto/update-admin.dto';
 
-import { Repository } from 'typeorm';
+import { Like, Repository } from 'typeorm';
 import { Admin } from './entities/admin.entity';
 import { PaginationDto } from '@global/dto/pagination.dto';
 import { FilterAnyFieldDto } from '@global/dto/filter-any-field.dto';
@@ -21,7 +21,11 @@ export class AdminService {
     return metadata.columns.map((column) => column.propertyName);
   }
 
-  async findAll(paginationDto: PaginationDto) {
+  esObjetoVacio(obj) {
+    return Object.keys(obj).length === 0;
+  }
+  
+  async findAll(condicionesWhere: any = null, paginationDto: PaginationDto) {
 
     const { limit, page, field = 'id' , order = 'Asc' } = paginationDto
     
@@ -43,13 +47,21 @@ export class AdminService {
     const skipeReal = (page == 1) ? 0 : (page - 1) * limit
 
     const peticion = async (page) => {
-      return await this.adminRepository.find({
+      const conditions: any = {
         skip: page,
         take: limit,
         order: {
-          [field]: order
-        }
-      })
+            [field]: order,
+        },
+      }
+
+      if(condicionesWhere){
+        conditions.where = condicionesWhere
+      }
+
+      return await this.adminRepository.find(
+        conditions
+      )
     }
 
     const totalRecords = async () => {
@@ -96,6 +108,36 @@ export class AdminService {
       result: dataMostrar,
     };
 
+  }
+
+  async filterAdmins(filterAnyFieldDto: FilterAnyFieldDto) {
+
+    if(this.esObjetoVacio(filterAnyFieldDto)) throw new NotFoundException(`Recuerde que debe enviar almenos un filtro`)
+
+    const countFields = filterAnyFieldDto.fields.split("|").length
+    const countData = filterAnyFieldDto.values.split("|").length
+
+    let arrayFields = filterAnyFieldDto.fields.split("|")
+    let arrayData = filterAnyFieldDto.values.split("|")
+
+    if(countFields != countData) throw new NotFoundException(`Error: La cantidad de campos a filtrar ${countFields}, no corresponde con la cantidad de datos a filtrar ${countData}`)
+
+    const whereClause: any = {};
+
+    
+    const propiedades = this.listarPropiedadesTabla(this.adminRepository)
+    for (const field of arrayFields) {
+      const arratResult = propiedades.filter(obj => obj === field).length
+  
+      if(arratResult == 0) throw new NotFoundException(`El parametro de busqueda ${field} no existe en la base de datos`)
+    }
+
+    for (let index = 0; index < arrayFields.length; index++) {
+      whereClause[arrayFields[index]] = Like(`%${arrayData[index]}%`);
+    }
+
+    return this.findAll(whereClause,filterAnyFieldDto)
+    
   }
 
   async create(createAdminDto: CreateAdminDto) {

@@ -23,13 +23,19 @@ export class UserController {
   @ApiTags('user')
   @Get()
   findAll(@Query() paginationDto: PaginationDto) {
-    return this.userService.findAll(paginationDto);
+    return this.userService.findAll('', paginationDto);
   }
   
   @ApiTags('user')
   @Get('obtener-usuario')
   findOne(@Query() filterForId: FilterForId) {
     return this.userService.findOne(filterForId);
+  }
+
+  @ApiTags('user')
+  @Get('filtro-usuario')
+  filterUsers(@Query() filterAnyFieldDto: FilterAnyFieldDto) {
+    return this.userService.filterUsers(filterAnyFieldDto);
   }
   
   @ApiTags('user')
