@@ -8,6 +8,7 @@ import { PaginationDto } from '@global/dto/pagination.dto';
 import { AdminGuard } from '@guard/admin/admin.guard';
 import { ApiTags } from '@nestjs/swagger';
 import { FilterAnyFieldDto } from '../../../../global/dto/filter-any-field.dto';
+import { FilterForId } from '@global/dto/filter-for-id.dto';
 
 @Controller('admin')
 export class AdminController {
@@ -28,8 +29,8 @@ export class AdminController {
 
   @ApiTags('admin')
   @Get('obtener-administrador')
-  findOne(@Query() filterAnyFieldDto: FilterAnyFieldDto) {
-    return this.adminService.findOne(filterAnyFieldDto);
+  findOne(@Query() filterForId: FilterForId) {
+    return this.adminService.findOne(filterForId);
   }
 
   @ApiTags('admin')
@@ -40,7 +41,7 @@ export class AdminController {
 
   @ApiTags('admin')
   @Delete('eliminar-admininistrador')
-  remove(@Query() filterAnyFieldDto: FilterAnyFieldDto) {
-    return this.adminService.remove(filterAnyFieldDto);
+  remove(@Query() filterForId: FilterForId) {
+    return this.adminService.remove(filterForId);
   }
 }

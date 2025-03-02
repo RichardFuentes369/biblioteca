@@ -5,6 +5,7 @@ import { UpdateStockDto } from './dto/update-stock.dto';
 import { ApiTags } from '@nestjs/swagger';
 import { PaginationDto } from '@global/dto/pagination.dto';
 import { FilterAnyFieldDto } from '@global/dto/filter-any-field.dto';
+import { FilterForId } from '@global/dto/filter-for-id.dto';
 
 @Controller('stock')
 export class StockController {
@@ -19,8 +20,8 @@ export class StockController {
 
     @ApiTags('stock')
     @Get('obtener-libro')
-    findOne(@Query() filterAnyFieldDto: FilterAnyFieldDto) {
-      return this.stockService.findOne(filterAnyFieldDto);
+    findOne(@Query() filterForId: FilterForId) {
+      return this.stockService.findOne(filterForId);
     }
 
     @ApiTags('stock')

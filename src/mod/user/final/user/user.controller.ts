@@ -8,6 +8,7 @@ import { ApiTags } from '@nestjs/swagger';
 
 import { FinalGuard } from '@guard/final/final.guard';
 import { FilterAnyFieldDto } from '@global/dto/filter-any-field.dto';
+import { FilterForId } from '@global/dto/filter-for-id.dto';
 
 @Controller('user')
 export class UserController {
@@ -27,8 +28,8 @@ export class UserController {
   
   @ApiTags('user')
   @Get('obtener-usuario')
-  findOne(@Query() filterAnyFieldDto: FilterAnyFieldDto) {
-    return this.userService.findOne(filterAnyFieldDto);
+  findOne(@Query() filterForId: FilterForId) {
+    return this.userService.findOne(filterForId);
   }
   
   @ApiTags('user')
@@ -39,7 +40,7 @@ export class UserController {
   
   @ApiTags('user')
   @Delete('eliminar-usuario')
-  remove(@Query() filterAnyFieldDto: FilterAnyFieldDto) {
-    return this.userService.remove(filterAnyFieldDto);
+  remove(@Query() filterForId: FilterForId) {
+    return this.userService.remove(filterForId);
   }
 }

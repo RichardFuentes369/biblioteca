@@ -5,6 +5,7 @@ import { Like, Repository } from 'typeorm';
 import { Stock } from './entities/stock.entity';
 import { PaginationDto } from '@global/dto/pagination.dto';
 import { FilterAnyFieldDto } from '@global/dto/filter-any-field.dto';
+import { FilterForId } from '@global/dto/filter-for-id.dto';
 
 @Injectable()
 export class StockService {
@@ -84,14 +85,14 @@ export class StockService {
     }
   }
 
-  async findOne(filterAnyFieldDto: FilterAnyFieldDto) {
+  async findOne(filterForId: FilterForId) {
     let result = await this.stcokReposity.findOne({
-      where: [ {id : filterAnyFieldDto.id}],
+      where: [ {id : filterForId.id}],
       order: { id: 'asc' }
     });
 
     if (!result) {
-      throw new NotFoundException(`No se encontraron registros asociados a la llave ${filterAnyFieldDto.id} en nuestra base de datos.`);
+      throw new NotFoundException(`No se encontraron registros asociados a la llave ${filterForId.id} en nuestra base de datos.`);
     }
 
     let dataMostrar = {
@@ -130,6 +131,14 @@ export class StockService {
     if(countFields != countData) throw new NotFoundException(`Error: La cantidad de campos a filtrar ${countFields}, no corresponde con la cantidad de datos a filtrar ${countData}`)
 
     const whereClause: any = {};
+
+    
+    const propiedades = this.listarPropiedadesTabla(this.stcokReposity)
+    for (const field of arrayFields) {
+      const arratResult = propiedades.filter(obj => obj === field).length
+  
+      if(arratResult == 0) throw new NotFoundException(`El parametro de busqueda ${field} no existe en la base de datos`)
+    }
 
     for (let index = 0; index < arrayFields.length; index++) {
       whereClause[arrayFields[index]] = Like(`%${arrayData[index]}%`);

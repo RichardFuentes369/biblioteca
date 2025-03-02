@@ -6,6 +6,7 @@ import { Repository } from 'typeorm';
 import { User } from './entities/user.entity';
 import { PaginationDto } from '@global/dto/pagination.dto';
 import { FilterAnyFieldDto } from '@global/dto/filter-any-field.dto';
+import { FilterForId } from '@global/dto/filter-for-id.dto';
 
 @Injectable()
 export class UserService {
@@ -72,14 +73,14 @@ export class UserService {
     }
   }
 
-  async findOne(filterAnyFieldDto: FilterAnyFieldDto) {
+  async findOne(filterForId: FilterForId) {
     let result = await this.userRepository.findOne({
-      where: [ {id : filterAnyFieldDto.id}],
+      where: [ {id : filterForId.id}],
       order: { id: 'asc' }
     });
 
     if (!result) {
-      throw new NotFoundException(`No se encontraron registros asociados a la llave ${filterAnyFieldDto.id} en nuestra base de datos.`);
+      throw new NotFoundException(`No se encontraron registros asociados a la llave ${filterForId.id} en nuestra base de datos.`);
     }
 
     let dataMostrar = {
@@ -159,18 +160,18 @@ export class UserService {
     };
   }
 
-  async remove(filterAnyFieldDto: FilterAnyFieldDto) {
+  async remove(filterForId: FilterForId) {
     const property = await this.userRepository.findOne({
-      where: [{ id: filterAnyFieldDto.id }]
+      where: [{ id: filterForId.id }]
     });
 
     if(!property){
-      throw new NotFoundException(`No se encontraron registros asociados a la llave ${filterAnyFieldDto.id} en nuestra base de datos.`);
+      throw new NotFoundException(`No se encontraron registros asociados a la llave ${filterForId.id} en nuestra base de datos.`);
     }
 
-    if(this.userRepository.delete(filterAnyFieldDto.id)){
+    if(this.userRepository.delete(filterForId.id)){
       return {
-        message: `Usuario con id ${filterAnyFieldDto.id} eliminado, correctamente`,
+        message: `Usuario con id ${filterForId.id} eliminado, correctamente`,
         result: [],
       };
     }

@@ -9,17 +9,9 @@ enum Order {
 
 export class FilterAnyFieldDto {
 
-    @IsPositive()
-    @IsOptional()
-    @IsNumber()
-    // @Transform(({value}) => value.trim())
-    id?: number;
-
-    @IsOptional()
     @IsString()
     fields?: string;
 
-    @IsOptional()
     @IsString()
     values?: string;
     
@@ -42,18 +34,3 @@ export class FilterAnyFieldDto {
     order?: string;
 }
 
-
-/*
-   let orderOptions = {};
-
-    if (filterAnyFieldDto.field && filterAnyFieldDto.order) {
-      orderOptions[filterAnyFieldDto.order] = filterAnyFieldDto.order;
-    } else {
-      orderOptions["id"] = 'desc';
-    }
-    
-    let result = await this.adminRepository.findOne({
-      where: [ {id: filterAnyFieldDto.id} ],
-      order: orderOptions
-    });
-    */
