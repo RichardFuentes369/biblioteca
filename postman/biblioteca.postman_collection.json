@@ -635,7 +635,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "localhost:3000/api/stock/filtro-libro?fields=id|languague|author&values=257|English|Harper Lee&page=1&limit=10&field=id&order=asc",
+									"raw": "localhost:3000/api/stock/filtro-stock?fields=id|languague|author&values=257|English|Harper Lee&page=1&limit=10&field=id&order=asc",
 									"host": [
 										"localhost"
 									],
@@ -643,7 +643,7 @@
 									"path": [
 										"api",
 										"stock",
-										"filtro-libro"
+										"filtro-stock"
 									],
 									"query": [
 										{
@@ -681,7 +681,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "localhost:3000/api/stock/obtener-libro?id=256",
+									"raw": "localhost:3000/api/stock/obtener-stock?id=256",
 									"host": [
 										"localhost"
 									],
@@ -689,7 +689,7 @@
 									"path": [
 										"api",
 										"stock",
-										"obtener-libro"
+										"obtener-stock"
 									],
 									"query": [
 										{
@@ -732,6 +732,94 @@
 										{
 											"key": "order",
 											"value": "asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "crear-stock",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Nacho Lee\",\n    \"publisher\": \"Susaeta Ediciones\",\n    \"author\": \"Melanio Hernández\",\n    \"year_of_publication\": 2007,\n    \"genre\": \"Educativo\",\n    \"languague\": \"Español\",\n    \"isbn\": \"978-9580714958\",\n    \"inStock\": 200,\n    \"inLoan\": 30,\n    \"damaged\": 95,\n    \"size_pages\": 40\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/stock/crear-stock",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"stock",
+										"crear-stock"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "editar-stock",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 569,\n    \"title\": \"Nacho Lee\",\n    \"publisher\": \"Susaeta Ediciones\",\n    \"author\": \"Melanio Hernández\",\n    \"year_of_publication\": 2007,\n    \"genre\": \"Educativo\",\n    \"languague\": \"Español\",\n    \"isbn\": \"978-9580714958\",\n    \"inStock\": 200,\n    \"inLoan\": 30,\n    \"damaged\": 95,\n    \"size_pages\": 40\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/stock/editar-stock",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"stock",
+										"editar-stock"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "crear-stock Copy",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "localhost:3000/api/stock/eliminar-stock?id=569",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"stock",
+										"eliminar-stock"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "569"
 										}
 									]
 								}

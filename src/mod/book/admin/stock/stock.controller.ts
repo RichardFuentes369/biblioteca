@@ -11,6 +11,12 @@ import { FilterForId } from '@global/dto/filter-for-id.dto';
 export class StockController {
   constructor(private readonly stockService: StockService) {}
 
+    @ApiTags('admin')
+    @Post('crear-stock')
+    create(@Body() createStockDto: CreateStockDto) {
+      return this.stockService.create(createStockDto);
+    }
+
     @ApiTags('stock')
     @Get()
     // @UseGuards(AdminGuard)
@@ -19,16 +25,27 @@ export class StockController {
     }
 
     @ApiTags('stock')
-    @Get('obtener-libro')
+    @Get('obtener-stock')
     findOne(@Query() filterForId: FilterForId) {
       return this.stockService.findOne(filterForId);
     }
 
     @ApiTags('stock')
-    @Get('filtro-libro')
+    @Get('filtro-stock')
     filterBooks(@Query() filterAnyFieldDto: FilterAnyFieldDto) {
       return this.stockService.filterBooks(filterAnyFieldDto);
     }
   
+    @ApiTags('stock')
+    @Patch('editar-stock')
+    update(@Body() updateStockDto: UpdateStockDto) {
+      return this.stockService.update(updateStockDto);
+    }
+  
+    @ApiTags('stock')
+    @Delete('eliminar-stock')
+    remove(@Query() filterForId: FilterForId) {
+      return this.stockService.remove(filterForId);
+    }
 
 }

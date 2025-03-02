@@ -148,4 +148,108 @@ export class StockService {
     
   }
 
+  async create(createStockDto: CreateStockDto) {
+
+    const encontrarLibro = await this.findBookForName(createStockDto.title)
+
+    if(encontrarLibro) throw new NotFoundException(`Este libro ${createStockDto.title}, ya esta registrado en nuestra base de datos`)
+
+
+    createStockDto['total'] = createStockDto.inLoan + createStockDto.inStock + createStockDto.damaged
+
+    const libroGuardado = await this.stcokReposity.save(createStockDto)
+
+    let dataMostrar = {
+      "id": libroGuardado.id, 
+      "title": libroGuardado.title, 
+      "publisher": libroGuardado.publisher, 
+      "author": libroGuardado.author, 
+      "year_of_publication": libroGuardado.year_of_publication, 
+      "genre": libroGuardado.genre, 
+      "languague": libroGuardado.languague, 
+      "isbn": libroGuardado.isbn, 
+      "inStock": libroGuardado.inStock, 
+      "inLoan": libroGuardado.inLoan, 
+      "damaged": libroGuardado.damaged, 
+      "total": libroGuardado.total, 
+      "size_pages": libroGuardado.size_pages
+    }
+
+    return {
+      message: 'Libro creado exitosamente',
+      result: dataMostrar,
+    };
+  }
+
+  async update(updateStockDto: UpdateStockDto) {
+    const property = await this.stcokReposity.findOne({
+      where: [{ id: updateStockDto.id }]
+    });
+
+    if(!property){
+      throw new NotFoundException(`No se encontraron registros asociados a la llave ${updateStockDto.id} en nuestra base de datos.`);
+    }
+
+    if(updateStockDto.title){
+      let concidencia = await this.stcokReposity.findOne({
+        where: [ {title : updateStockDto.title}]
+      });
+      
+      if(concidencia.id != updateStockDto.id) throw new NotFoundException(`EL libro ${updateStockDto.title} ya existe en nuestros registros`)
+        
+    }
+
+    updateStockDto['total'] = updateStockDto.inLoan + updateStockDto.inStock + updateStockDto.damaged
+
+    await this.stcokReposity.save({
+      ...property, // existing fields
+      ...updateStockDto // updated fields
+    });
+
+
+    let dataMostrar = {
+      "id": updateStockDto.id, 
+      "title": updateStockDto.title, 
+      "publisher": updateStockDto.publisher, 
+      "author": updateStockDto.author, 
+      "year_of_publication": updateStockDto.year_of_publication, 
+      "genre": updateStockDto.genre, 
+      "languague": updateStockDto.languague, 
+      "isbn": updateStockDto.isbn, 
+      "inStock": updateStockDto.inStock, 
+      "inLoan": updateStockDto.inLoan, 
+      "damaged": updateStockDto.damaged, 
+      "total": updateStockDto['total'], 
+      "size_pages": updateStockDto.size_pages
+    }
+
+    return {
+      message: 'Libro actualizado exitosamente',
+      result: dataMostrar,
+    };
+  }
+
+  async remove(filterForId: FilterForId) {
+    const property = await this.stcokReposity.findOne({
+      where: [ {id : filterForId.id}]
+    });
+
+    if(!property){
+      throw new NotFoundException(`No se encontraron registros asociados a la llave ${filterForId.id} en nuestra base de datos.`);
+    }
+
+    if(this.stcokReposity.delete(filterForId.id)){
+      return {
+        message: `Libro con id ${filterForId.id} eliminado, correctamente`,
+        result: [],
+      };
+    }
+  }
+
+  async findBookForName(title: string): Promise<Stock>{
+    return this.stcokReposity.findOne({
+      where: [ {title : title}]
+    });
+  }
+
 }
