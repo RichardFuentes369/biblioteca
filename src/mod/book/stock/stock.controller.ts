@@ -11,7 +11,7 @@ import { FilterForId } from '@global/dto/filter-for-id.dto';
 export class StockController {
   constructor(private readonly stockService: StockService) {}
 
-    @ApiTags('admin')
+    @ApiTags('stock')
     @Post('crear-stock')
     create(@Body() createStockDto: CreateStockDto) {
       return this.stockService.create(createStockDto);

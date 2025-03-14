@@ -19,6 +19,9 @@ import {
   AuthuserModule,
   StockModule
 } from './mod/index'
+import { LoanModule } from './src/book/loan/loan.module';
+import { LoanModule } from './src/mod/book/loan/loan.module';
+import { LoanModule } from './mod/book/loan/loan.module';
 
 @Module({
   imports: [
@@ -44,7 +47,8 @@ import {
     AuthadminModule,
     UserModule,
     AuthuserModule,
-    StockModule
+    StockModule,
+    LoanModule
   ],
   controllers: [AppController],
   providers: [AppService],
