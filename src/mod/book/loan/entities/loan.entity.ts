@@ -18,6 +18,19 @@ export class Loan {
   })
   usuario_biblioteca_id: number;
 
+  @Column()
+  fecha_solicitud: number;
+
+  @Column({
+    nullable: true
+  })
+  fecha_prestamo: number;
+
+  @Column({
+    nullable: true
+  })
+  fecha_entrega: number;
+
   @Column({
     type: 'enum',
     enum: loanStatus,

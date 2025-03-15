@@ -2,7 +2,6 @@ import { ApiProperty } from "@nestjs/swagger";
 import { IsString, IsBoolean, IsNumber, IsEmail, IsPositive } from "class-validator";
 
 export class CreateLoanDto {
-
     @ApiProperty({
         description: 'ID, libro a prestar.',
         type: 'number',

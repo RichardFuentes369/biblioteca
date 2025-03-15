@@ -15,7 +15,7 @@ export class AdminController {
   constructor(private readonly adminService: AdminService) {}
 
   @ApiTags('admin')
-  @Post('crear-admininistrador')
+  @Post('crear-admininistradvaluesor')
   create(@Body() createAdminDto: CreateAdminDto) {
     return this.adminService.create(createAdminDto);
   }
