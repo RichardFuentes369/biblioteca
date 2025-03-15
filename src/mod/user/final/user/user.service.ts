@@ -95,6 +95,10 @@ export class UserService {
       throw new NotFoundException(`No se encontraron registros asociados a la llave ${filterForId.id} en nuestra base de datos.`);
     }
 
+    if (result.isActive == false) {
+      throw new NotFoundException(`El usuario con llave ${filterForId.id} se encuentra inactivo en el sistema.`);
+    }
+
     let dataMostrar = {
       "id": result.id, 
       "firstName": result.firstName, 

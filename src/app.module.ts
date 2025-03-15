@@ -17,11 +17,10 @@ import {
   AuthadminModule, 
   UserModule, 
   AuthuserModule,
-  StockModule
+  StockModule,
+  LoanModule,
+  DetailLoanModule
 } from './mod/index'
-import { LoanModule } from './src/book/loan/loan.module';
-import { LoanModule } from './src/mod/book/loan/loan.module';
-import { LoanModule } from './mod/book/loan/loan.module';
 
 @Module({
   imports: [
@@ -48,7 +47,8 @@ import { LoanModule } from './mod/book/loan/loan.module';
     UserModule,
     AuthuserModule,
     StockModule,
-    LoanModule
+    LoanModule,
+    DetailLoanModule
   ],
   controllers: [AppController],
   providers: [AppService],

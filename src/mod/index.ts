@@ -6,6 +6,8 @@ export { UserModule } from './user/final/user/user.module';
 
 
 export { StockModule } from './book/stock/stock.module';
+export { LoanModule } from './book/loan/loan.module';
+export { DetailLoanModule } from './book/detail_loan/detail_loan.module';
 
 
 
