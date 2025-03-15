@@ -9,6 +9,7 @@ import { StockService } from '@module/book/stock/stock.service'
 import { Loan } from './entities/loan.entity'
 import { PaginationDto } from '@global/dto/pagination.dto';
 import { FilterAnyFieldDto } from '@global/dto/filter-any-field.dto';
+import { AdminService } from '@module/user/admin/user/admin.service';
 
 @Injectable()
 export class LoanService {
@@ -16,6 +17,7 @@ export class LoanService {
   constructor(
     @Inject('LOAN_REPOSITORY')
     private loadReposity: Repository<Loan>,
+    private adminService: AdminService,
     private userService: UserService,
     private stockService: StockService,
   ) {}
@@ -189,43 +191,38 @@ export class LoanService {
   }
 
   async update(updateLoanDto: UpdateLoanDto){
-    // const property = await this.loadReposity.findOne({
-    //   where: [{ id: updateLoanDto.id }]
-    // });
+    const property = await this.loadReposity.findOne({
+      where: [{ id: updateLoanDto.id }]
+    });
 
-    // if(!property){
-    //   throw new NotFoundException(`No se encontraron registros asociados a la llave ${updateLoanDto.id} en nuestra base de datos.`);
-    // }
+    if(!property){
+      throw new NotFoundException(`No se encontraron registros asociados a la llave ${updateLoanDto.id} en nuestra base de datos.`);
+    }
 
-    // if(updateLoanDto.email){
-    //   if(updateAdminDto.email != property.email){
-  
-    //     let concidencia = await this.adminRepository.findOne({
-    //       where: [ {email : updateAdminDto.email}]
-    //     });
-        
-    //     if(concidencia) throw new NotFoundException(`El correo que esta intentando actualizar ya existe en nuestra base de datos`)
-        
-    //   }
-    // }
+    
+    let resultUserBibliotecaId = await this.adminService.findOne({id: updateLoanDto.usuario_biblioteca_id})
 
-    // await this.loadReposity.save({
-    //   ...property, // existing fields
-    //   ...updateLoanDto // updated fields
-    // });
+    if(!resultUserBibliotecaId.result){
+      throw new NotFoundException(`No se encontraron registros asociados a la llave ${updateLoanDto.usuario_biblioteca_id} en nuestra base de datos.`);
+    }
 
-    // let dataMostrar = {
-    //   "id": updateLoanDto.id, 
-    //   "firstName": updateLoanDto.firstName, 
-    //   "lastName": updateLoanDto.lastName, 
-    //   "email": updateLoanDto.email,
-    //   "password": "***************",
-    // }
+    await this.loadReposity.save({
+      ...property, // existing fields
+      ...updateLoanDto // updated fields
+    });
 
-    // return {
-    //   message: 'Estado prestamo actualizado exitosamente',
-    //   result: dataMostrar,
-    // };
+    let dataMostrar = {
+      "id": updateLoanDto.id, 
+      "fecha_prestamo": (updateLoanDto.fecha_prestamo != null) ? updateLoanDto.fecha_prestamo : property.fecha_prestamo, 
+      "fecha_entrega": (updateLoanDto.fecha_entrega != null) ? updateLoanDto.fecha_entrega : property.fecha_entrega, 
+      "type": updateLoanDto.type,
+      "usuario_biblioteca_id": resultUserBibliotecaId.result.id,
+    }
+
+    return {
+      message: 'Estado prestamo actualizado exitosamente',
+      result: dataMostrar,
+    };
   }
 
 }
