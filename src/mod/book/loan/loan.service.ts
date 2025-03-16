@@ -31,6 +31,11 @@ export class LoanService {
     return Object.keys(obj).length === 0;
   }
 
+  timestampADate = (timestamp) => {
+    const fecha = new Date(timestamp * 1000)
+    return fecha.toLocaleString()
+  }
+
   async prestamosHechosPorUsuario(userId: number, type: loanStatus){
     let result = await this.loadReposity.count({
       where: [{
@@ -41,11 +46,6 @@ export class LoanService {
     });
 
     return result
-  }
-  
-  timestampADate = (timestamp) => {
-    const fecha = new Date(timestamp * 1000)
-    return fecha.toLocaleString()
   }
 
   async create(createLoanDto: CreateLoanDto) {
@@ -199,12 +199,26 @@ export class LoanService {
       throw new NotFoundException(`No se encontraron registros asociados a la llave ${updateLoanDto.id} en nuestra base de datos.`);
     }
 
-    
     let resultUserBibliotecaId = await this.adminService.findOne({id: updateLoanDto.usuario_biblioteca_id})
 
     if(!resultUserBibliotecaId.result){
       throw new NotFoundException(`No se encontraron registros asociados a la llave ${updateLoanDto.usuario_biblioteca_id} en nuestra base de datos.`);
     }
+
+    let detallePrestamo = await this.stockService.findOne({id: property.libro_id})
+
+    switch (updateLoanDto.type) {
+      case "Prestado":
+        detallePrestamo.result.inStock -= 1
+        detallePrestamo.result.inLoan += 1
+      break;
+      case "Entregado":
+        detallePrestamo.result.inStock += 1
+        detallePrestamo.result.inLoan -= 1
+      break;
+    }
+
+    await this.stockService.update(detallePrestamo.result)
 
     await this.loadReposity.save({
       ...property, // existing fields

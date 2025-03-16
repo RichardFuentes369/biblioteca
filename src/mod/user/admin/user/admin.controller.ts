@@ -15,13 +15,13 @@ export class AdminController {
   constructor(private readonly adminService: AdminService) {}
 
   @ApiTags('admin')
-  @Post('crear-admininistradvaluesor')
+  @Post('crear-administrador')
   create(@Body() createAdminDto: CreateAdminDto) {
     return this.adminService.create(createAdminDto);
   }
   
   @ApiTags('admin')
-  @Get()
+  @Get('lista')
   // @UseGuards(AdminGuard)
   findAll(@Query() paginationDto: PaginationDto) {
     return this.adminService.findAll('', paginationDto);

@@ -21,7 +21,7 @@ export class UserController {
   }
   
   @ApiTags('user')
-  @Get()
+  @Get('lista')
   findAll(@Query() paginationDto: PaginationDto) {
     return this.userService.findAll('', paginationDto);
   }

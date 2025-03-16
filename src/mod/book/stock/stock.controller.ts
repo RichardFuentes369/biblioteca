@@ -18,7 +18,7 @@ export class StockController {
     }
 
     @ApiTags('stock')
-    @Get()
+    @Get('lista')
     // @UseGuards(AdminGuard)
     findAll(@Query() paginationDto: PaginationDto) {
       return this.stockService.findAll('',paginationDto);
