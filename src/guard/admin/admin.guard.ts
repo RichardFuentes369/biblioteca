@@ -12,7 +12,7 @@ import { Request } from 'express';
 @Injectable()
 export class AdminGuard implements CanActivate {
   constructor(
-    private adminService: AdminService,
+    // private adminService: AdminService,
     private jwtService: JwtService
   ) { }
 

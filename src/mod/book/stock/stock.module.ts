@@ -6,11 +6,13 @@ import { StockService } from './stock.service';
 import { StockController } from './stock.controller';
 
 @Module({
-    imports: [GlobalModule],
+    imports: [
+      GlobalModule,
+    ],
     controllers: [StockController],
     providers: [
       ...stokProvider,
-      StockService
+      StockService,
     ],
     exports: [
       StockService

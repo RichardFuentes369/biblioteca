@@ -81,7 +81,7 @@
 											"bearer": [
 												{
 													"key": "token",
-													"value": "{{tokenAdmin}}",
+													"value": "",
 													"type": "string"
 												}
 											]
@@ -637,6 +637,9 @@
 								{
 									"name": "getBooks-filter",
 									"request": {
+										"auth": {
+											"type": "noauth"
+										},
 										"method": "GET",
 										"header": [],
 										"url": {
@@ -683,6 +686,9 @@
 								{
 									"name": "getBooks-id",
 									"request": {
+										"auth": {
+											"type": "noauth"
+										},
 										"method": "GET",
 										"header": [],
 										"url": {
@@ -709,6 +715,9 @@
 								{
 									"name": "getBooks",
 									"request": {
+										"auth": {
+											"type": "noauth"
+										},
 										"method": "GET",
 										"header": [],
 										"url": {
@@ -747,6 +756,16 @@
 								{
 									"name": "crear-stock",
 									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{tokenAdmin}}",
+													"type": "string"
+												}
+											]
+										},
 										"method": "POST",
 										"header": [],
 										"body": {
@@ -776,6 +795,16 @@
 								{
 									"name": "editar-stock",
 									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{tokenAdmin}}",
+													"type": "string"
+												}
+											]
+										},
 										"method": "PATCH",
 										"header": [],
 										"body": {
@@ -803,8 +832,18 @@
 									"response": []
 								},
 								{
-									"name": "crear-stock",
+									"name": "eliminar-stock",
 									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{tokenAdmin}}",
+													"type": "string"
+												}
+											]
+										},
 										"method": "DELETE",
 										"header": [],
 										"body": {
@@ -812,7 +851,7 @@
 											"formdata": []
 										},
 										"url": {
-											"raw": "localhost:3000/api/stock/eliminar-stock?id=569",
+											"raw": "localhost:3000/api/stock/eliminar-stock?id=5692",
 											"host": [
 												"localhost"
 											],
@@ -825,7 +864,7 @@
 											"query": [
 												{
 													"key": "id",
-													"value": "569"
+													"value": "5692"
 												}
 											]
 										}
@@ -840,6 +879,9 @@
 								{
 									"name": "getBooks-filter",
 									"request": {
+										"auth": {
+											"type": "noauth"
+										},
 										"method": "GET",
 										"header": [],
 										"url": {
@@ -886,6 +928,9 @@
 								{
 									"name": "getBooks",
 									"request": {
+										"auth": {
+											"type": "noauth"
+										},
 										"method": "GET",
 										"header": [],
 										"url": {
@@ -934,6 +979,16 @@
 								{
 									"name": "solicitud-prestamo",
 									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{tokenUser}}",
+													"type": "string"
+												}
+											]
+										},
 										"method": "POST",
 										"header": [],
 										"body": {
@@ -968,6 +1023,16 @@
 								{
 									"name": "getSolicitudesPrestamos-filter",
 									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{tokenAdmin}}",
+													"type": "string"
+												}
+											]
+										},
 										"method": "GET",
 										"header": [],
 										"url": {
@@ -1014,6 +1079,16 @@
 								{
 									"name": "getSolicitudesPrestamos",
 									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{tokenAdmin}}",
+													"type": "string"
+												}
+											]
+										},
 										"method": "GET",
 										"header": [],
 										"url": {
@@ -1052,6 +1127,16 @@
 								{
 									"name": "putActualizarEstadoPrestamo",
 									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{tokenAdmin}}",
+													"type": "string"
+												}
+											]
+										},
 										"method": "PATCH",
 										"header": [],
 										"body": {

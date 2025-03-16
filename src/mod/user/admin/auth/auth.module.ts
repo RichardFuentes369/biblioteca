@@ -9,7 +9,7 @@ import { AdminModule } from '@module/user/admin/user/admin.module';
 
 @Module({
   imports: [
-    AdminModule, 
+    AdminModule,
     JwtModule.register({
       global: true,
       secret: jwtConstants.secretAdmin,
