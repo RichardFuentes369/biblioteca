@@ -19,7 +19,6 @@ import {
   AuthuserModule,
   StockModule,
   LoanModule,
-  DetailLoanModule
 } from './mod/index'
 
 @Module({
@@ -48,7 +47,6 @@ import {
     AuthuserModule,
     StockModule,
     LoanModule,
-    DetailLoanModule
   ],
   controllers: [AppController],
   providers: [AppService],
