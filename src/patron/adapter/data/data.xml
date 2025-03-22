@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+    <book>
+        <title>Cien Años de Soledad</title>
+        <publisher>Alfaguara</publisher>
+        <author>Gabriel García Márquez</author>
+        <year_of_publication>1967</year_of_publication>
+        <genre>Magical Realism</genre>
+        <language>Spanish</language>
+        <isbn>9788420471839</isbn>
+        <inStock>15</inStock>
+        <inLoan>5</inLoan>
+        <damaged>2</damaged>
+        <total>22</total>
+        <size_pages>576</size_pages>
+    </book>
+    <book>
+        <title>The Great Gatsby</title>
+        <publisher>Scribner</publisher>
+        <author>F. Scott Fitzgerald</author>
+        <year_of_publication>1925</year_of_publication>
+        <genre>Fiction</genre>
+        <language>English</language>
+        <isbn>9780743273565</isbn>
+        <inStock>10</inStock>
+        <inLoan>3</inLoan>
+        <damaged>1</damaged>
+        <total>14</total>
+        <size_pages>180</size_pages>
+    </book>
+    <book>
+        <title>1984</title>
+        <publisher>Secker &amp; Warburg</publisher>
+        <author>George Orwell</author>
+        <year_of_publication>1949</year_of_publication>
+        <genre>Dystopia</genre>
+        <language>English</language>
+        <isbn>9780451524935</isbn>
+        <inStock>20</inStock>
+        <inLoan>8</inLoan>
+        <damaged>3</damaged>
+        <total>31</total>
+        <size_pages>328</size_pages>
+    </book>
+    <book>
+        <title>Orgullo y Prejuicio</title>
+        <publisher>Penguin</publisher>
+        <author>Jane Austen</author>
+        <year_of_publication>1813</year_of_publication>
+        <genre>Romance</genre>
+        <language>English</language>
+        <isbn>9780141439518</isbn>
+        <inStock>12</inStock>
+        <inLoan>4</inLoan>
+        <damaged>0</damaged>
+        <total>16</total>
+        <size_pages>432</size_pages>
+    </book>
+    <book>
+        <title>El Aleph</title>
+        <publisher>Emecé</publisher>
+        <author>Jorge Luis Borges</author>
+        <year_of_publication>1949</year_of_publication>
+        <genre>Short Stories</genre>
+        <language>Spanish</language>
+        <isbn>9789500426329</isbn>
+        <inStock>8</inStock>
+        <inLoan>2</inLoan>
+        <damaged>1</damaged>
+        <total>11</total>
+        <size_pages>224</size_pages>
+    </book>
+    <book>
+        <title>To Kill a Mockingbird</title>
+        <publisher>J.B. Lippincott</publisher>
+        <author>Harper Lee</author>
+        <year_of_publication>1960</year_of_publication>
+        <genre>Fiction</genre>
+        <language>English</language>
+        <isbn>9780446310789</isbn>
+        <inStock>18</inStock>
+        <inLoan>6</inLoan>
+        <damaged>2</damaged>
+        <total>26</total>
+        <size_pages>281</size_pages>
+    </book>
+    <book>
+        <title>Don Quijote de la Mancha</title>
+        <publisher>Francisco de Robles</publisher>
+        <author>Miguel de Cervantes</author>
+        <year_of_publication>1605</year_of_publication>
+        <genre>Adventure</genre>
+        <language>Spanish</language>
+        <isbn>9788467032437</isbn>
+        <inStock>14</inStock>
+        <inLoan>5</inLoan>
+        <damaged>3</damaged>
+        <total>22</total>
+        <size_pages>863</size_pages>
+    </book>
+    <book>
+        <title>The Catcher in the Rye</title>
+        <publisher>Little Brown</publisher>
+        <author>J.D. Salinger</author>
+        <year_of_publication>1951</year_of_publication>
+        <genre>Fiction</genre>
+        <language>English</language>
+        <isbn>9780316769488</isbn>
+        <inStock>9</inStock>
+        <inLoan>3</inLoan>
+        <damaged>1</damaged>
+        <total>13</total>
+        <size_pages>277</size_pages>
+    </book>
+    <book>
+        <title>La Sombra del Viento</title>
+        <publisher>Planeta</publisher>
+        <author>Carlos Ruiz Zafón</author>
+        <year_of_publication>2001</year_of_publication>
+        <genre>Mystery</genre>
+        <language>Spanish</language>
+        <isbn>9788408051053</isbn>
+        <inStock>16</inStock>
+        <inLoan>7</inLoan>
+        <damaged>2</damaged>
+        <total>25</total>
+        <size_pages>487</size_pages>
+    </book>
+    <book>
+        <title>Brave New World</title>
+        "publisher": "Chatto &amp; Windus",
+        <author>Aldous Huxley</author>
+        <year_of_publication>1932</year_of_publication>
+        <genre>Dystopia</genre>
+        <language>English</language>
+        <isbn>9780060850524</isbn>
+        <inStock>11</inStock>
+        <inLoan>4</inLoan>
+        <damaged>1</damaged>
+        <total>16</total>
+        <size_pages>288</size_pages>
+    </book>
+</books>

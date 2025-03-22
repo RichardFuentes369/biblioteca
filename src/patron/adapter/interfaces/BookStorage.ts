@@ -1,0 +1,3 @@
+interface BookStorage {
+    getBooks(): Book[];
+}
