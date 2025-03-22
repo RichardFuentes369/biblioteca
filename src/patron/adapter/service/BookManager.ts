@@ -8,7 +8,7 @@ class BookManager {
     saveToTable(): void {
         const books = this.storage.getBooks();
         books.forEach(book => {
-            console.log(`Guardando: ${book.title} por ${book.author} (${book.year})`);
+            console.log(`Guardando: ${book.title} por ${book.author} (${book.year_of_publication}`)
         });
     }
 }
