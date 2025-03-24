@@ -51,7 +51,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"token\": \"{{tokenAdmin}}\"\r\n}",
+											"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbjFAY29ycmVvLmNvbSIsImlhdCI6MTc0MDUzNzk2MSwiZXhwIjoxNzQwNTM4MDIxfQ.4WpKYUVWAy8n8mc6O1oYHo80PDiv3tGdvA9XNEFHX6k\"\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -81,7 +81,7 @@
 											"bearer": [
 												{
 													"key": "token",
-													"value": "{{tokenAdmin}}",
+													"value": "",
 													"type": "string"
 												}
 											]
@@ -124,14 +124,15 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "localhost:3000/api/admin?page=1&limit=10&field=id&order=asc",
+											"raw": "localhost:3000/api/admin/lista?page=1&limit=10&field=id&order=asc",
 											"host": [
 												"localhost"
 											],
 											"port": "3000",
 											"path": [
 												"api",
-												"admin"
+												"admin",
+												"lista"
 											],
 											"query": [
 												{
@@ -161,7 +162,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "localhost:3000/api/admin/obtener-administrador/1",
+											"raw": "localhost:3000/api/admin/obtener-administrador?id=1",
 											"host": [
 												"localhost"
 											],
@@ -169,8 +170,13 @@
 											"path": [
 												"api",
 												"admin",
-												"obtener-administrador",
-												"1"
+												"obtener-administrador"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "1"
+												}
 											]
 										}
 									},
@@ -183,7 +189,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"firstName\": \"Natalia\",\r\n    \"lastName\": \"Villamizar Silva\",\r\n    \"password\": \"Qwerty9601\",\r\n    \"email\": \"admin22@correo.com\",\r\n    \"isActive\": true\r\n}",
+											"raw": "{\r\n    \"firstName\": \"Rogelio\",\r\n    \"lastName\": \"Pataquiva Tocasuche\",\r\n    \"password\": \"Qwerty9601\",\r\n    \"email\": \"admin3@correo.com\",\r\n    \"isActive\": true\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -206,12 +212,12 @@
 									"response": []
 								},
 								{
-									"name": "deleteAdmin",
+									"name": "getAdmins-filter",
 									"request": {
-										"method": "DELETE",
+										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "localhost:3000/api/admin/eliminar-admininistrador/15",
+											"raw": "localhost:3000/api/admin/filtro-administrador?fields=email&values=admin22@correo.com&page=1&limit=10&field=id&order=asc",
 											"host": [
 												"localhost"
 											],
@@ -219,8 +225,59 @@
 											"path": [
 												"api",
 												"admin",
-												"eliminar-admininistrador",
-												"15"
+												"filtro-administrador"
+											],
+											"query": [
+												{
+													"key": "fields",
+													"value": "email"
+												},
+												{
+													"key": "values",
+													"value": "admin22@correo.com"
+												},
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "limit",
+													"value": "10"
+												},
+												{
+													"key": "field",
+													"value": "id"
+												},
+												{
+													"key": "order",
+													"value": "asc"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "deleteAdmin",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "localhost:3000/api/admin/eliminar-admininistrador?id=16",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"admin",
+												"eliminar-admininistrador"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "16"
+												}
 											]
 										}
 									},
@@ -233,7 +290,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"firstName\": \"Admin121\",\r\n    \"lastName\": \"Principal\",\r\n    \"email\": \"admin22@correo.com\",\r\n    \"isActive\": false\r\n}",
+											"raw": "{\r\n    \"id\": 17,\r\n    \"firstName\": \"Admin121\",\r\n    \"lastName\": \"Principal\",\r\n    \"email\": \"admin22@correo.com\",\r\n    \"isActive\": false\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -241,7 +298,7 @@
 											}
 										},
 										"url": {
-											"raw": "localhost:3000/api/admin/editar-administrador/13",
+											"raw": "localhost:3000/api/admin/editar-administrador",
 											"host": [
 												"localhost"
 											],
@@ -249,8 +306,7 @@
 											"path": [
 												"api",
 												"admin",
-												"editar-administrador",
-												"13"
+												"editar-administrador"
 											]
 										}
 									},
@@ -282,14 +338,15 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "localhost:3000/api/user?page=1&limit=3&field=id&order=asc",
+											"raw": "localhost:3000/api/user/lista?page=1&limit=10&field=id&order=asc",
 											"host": [
 												"localhost"
 											],
 											"port": "3000",
 											"path": [
 												"api",
-												"user"
+												"user",
+												"lista"
 											],
 											"query": [
 												{
@@ -298,7 +355,7 @@
 												},
 												{
 													"key": "limit",
-													"value": "3"
+													"value": "10"
 												},
 												{
 													"key": "field",
@@ -319,7 +376,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "localhost:3000/api/user/obtener-usuario/1",
+											"raw": "localhost:3000/api/user/obtener-usuario?id=1",
 											"host": [
 												"localhost"
 											],
@@ -327,8 +384,13 @@
 											"path": [
 												"api",
 												"user",
-												"obtener-usuario",
-												"1"
+												"obtener-usuario"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "1"
+												}
 											]
 										}
 									},
@@ -341,7 +403,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"firstName\": \"Usuario1\",\r\n    \"lastName\": \"Gates\",\r\n    \"password\": \"Qwerty9601\",\r\n    \"email\": \"user1@gmail.com\",\r\n    \"isActive\": true\r\n}",
+											"raw": "{\r\n    \"firstName\": \"Usuario4\",\r\n    \"lastName\": \"Gates\",\r\n    \"password\": \"Qwerty9601\",\r\n    \"email\": \"user4@gmail.com\",\r\n    \"isActive\": true\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -369,7 +431,7 @@
 										"method": "DELETE",
 										"header": [],
 										"url": {
-											"raw": "localhost:3000/api/user/eliminar-usuario/4",
+											"raw": "localhost:3000/api/user/eliminar-usuario?id=4",
 											"host": [
 												"localhost"
 											],
@@ -377,8 +439,13 @@
 											"path": [
 												"api",
 												"user",
-												"eliminar-usuario",
-												"4"
+												"eliminar-usuario"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "4"
+												}
 											]
 										}
 									},
@@ -391,7 +458,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"firstName\": \"Javier\",\r\n    \"lastName\": \"Baron\",\r\n    \"isActive\": true\r\n}",
+											"raw": "{\r\n    \"id\": 3,\r\n    \"firstName\": \"Javier\",\r\n    \"lastName\": \"Baron\",\r\n    \"isActive\": true\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -399,7 +466,7 @@
 											}
 										},
 										"url": {
-											"raw": "localhost:3000/api/user/editar-usuario/4",
+											"raw": "localhost:3000/api/user/editar-usuario",
 											"host": [
 												"localhost"
 											],
@@ -407,8 +474,53 @@
 											"path": [
 												"api",
 												"user",
-												"editar-usuario",
-												"4"
+												"editar-usuario"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getUsuarios-filter",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3000/api/user/filtro-usuario?fields=id&values=1&page=1&limit=10&field=id&order=asc",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"user",
+												"filtro-usuario"
+											],
+											"query": [
+												{
+													"key": "fields",
+													"value": "id"
+												},
+												{
+													"key": "values",
+													"value": "1"
+												},
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "limit",
+													"value": "10"
+												},
+												{
+													"key": "field",
+													"value": "id"
+												},
+												{
+													"key": "order",
+													"value": "asc"
+												}
 											]
 										}
 									},
@@ -502,6 +614,577 @@
 												"api",
 												"authuser",
 												"refresh"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "book",
+			"item": [
+				{
+					"name": "stock",
+					"item": [
+						{
+							"name": "admin",
+							"item": [
+								{
+									"name": "getBooks-filter",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3000/api/stock/filtro-stock?fields=id|languague|author&values=257|English|Harper Lee&page=1&limit=10&field=id&order=asc",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"stock",
+												"filtro-stock"
+											],
+											"query": [
+												{
+													"key": "fields",
+													"value": "id|languague|author"
+												},
+												{
+													"key": "values",
+													"value": "257|English|Harper Lee"
+												},
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "limit",
+													"value": "10"
+												},
+												{
+													"key": "field",
+													"value": "id"
+												},
+												{
+													"key": "order",
+													"value": "asc"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getBooks-id",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3000/api/stock/obtener-stock?id=256",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"stock",
+												"obtener-stock"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "256"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getBooks",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3000/api/stock/lista?page=1&limit=10&field=id&order=asc",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"stock",
+												"lista"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "limit",
+													"value": "10"
+												},
+												{
+													"key": "field",
+													"value": "id"
+												},
+												{
+													"key": "order",
+													"value": "asc"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "crear-stock",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{tokenAdmin}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"title\": \"Nacho Lee\",\n    \"publisher\": \"Susaeta Ediciones\",\n    \"author\": \"Melanio Hernández\",\n    \"year_of_publication\": 2007,\n    \"genre\": \"Educativo\",\n    \"languague\": \"Español\",\n    \"isbn\": \"978-9580714958\",\n    \"inStock\": 200,\n    \"inLoan\": 30,\n    \"damaged\": 95,\n    \"size_pages\": 40\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3000/api/stock/crear-stock",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"stock",
+												"crear-stock"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "editar-stock",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{tokenAdmin}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id\": 569,\n    \"title\": \"Nacho Lee\",\n    \"publisher\": \"Susaeta Ediciones\",\n    \"author\": \"Melanio Hernández\",\n    \"year_of_publication\": 2007,\n    \"genre\": \"Educativo\",\n    \"languague\": \"Español\",\n    \"isbn\": \"978-9580714958\",\n    \"inStock\": 200,\n    \"inLoan\": 30,\n    \"damaged\": 95,\n    \"size_pages\": 40\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3000/api/stock/editar-stock",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"stock",
+												"editar-stock"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "eliminar-stock",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{tokenAdmin}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "localhost:3000/api/stock/eliminar-stock?id=5692",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"stock",
+												"eliminar-stock"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "5692"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "adapter-cargue-archivo",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/stock/cargue-archivo?extension=csv",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"stock",
+												"cargue-archivo"
+											],
+											"query": [
+												{
+													"key": "extension",
+													"value": "csv"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "final",
+							"item": [
+								{
+									"name": "getBooks-filter",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3000/api/stock/filtro-stock?fields=id|languague|author&values=257|English|Harper Lee&page=1&limit=10&field=id&order=asc",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"stock",
+												"filtro-stock"
+											],
+											"query": [
+												{
+													"key": "fields",
+													"value": "id|languague|author"
+												},
+												{
+													"key": "values",
+													"value": "257|English|Harper Lee"
+												},
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "limit",
+													"value": "10"
+												},
+												{
+													"key": "field",
+													"value": "id"
+												},
+												{
+													"key": "order",
+													"value": "asc"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getBooks",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3000/api/stock/lista?page=1&limit=10&field=id&order=asc",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"stock",
+												"lista"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "limit",
+													"value": "10"
+												},
+												{
+													"key": "field",
+													"value": "id"
+												},
+												{
+													"key": "order",
+													"value": "asc"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "loan",
+					"item": [
+						{
+							"name": "final",
+							"item": [
+								{
+									"name": "solicitud-prestamo",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{tokenUser}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"libro_id\": 171,\n    \"usuario_final_id\": 1\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3000/api/loan/solicitud-prestamo",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"loan",
+												"solicitud-prestamo"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "admin",
+							"item": [
+								{
+									"name": "getSolicitudesPrestamos-filter",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{tokenAdmin}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3000/api/loan/filtro-solicitudes-prestamo?fields=type&values=Solicitado&page=1&limit=10&field=id&order=asc",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"loan",
+												"filtro-solicitudes-prestamo"
+											],
+											"query": [
+												{
+													"key": "fields",
+													"value": "type"
+												},
+												{
+													"key": "values",
+													"value": "Solicitado"
+												},
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "limit",
+													"value": "10"
+												},
+												{
+													"key": "field",
+													"value": "id"
+												},
+												{
+													"key": "order",
+													"value": "asc"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getSolicitudesPrestamos",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{tokenAdmin}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3000/api/loan/mostrar-solicitudes-prestamo?page=1&limit=10&field=id&order=asc",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"loan",
+												"mostrar-solicitudes-prestamo"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "limit",
+													"value": "10"
+												},
+												{
+													"key": "field",
+													"value": "id"
+												},
+												{
+													"key": "order",
+													"value": "asc"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "putActualizarEstadoPrestamo",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{tokenAdmin}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id\": 98,\n    \"usuario_biblioteca_id\": 2,\n    \"fecha_prestamo\": 1742009766,\n    \"fecha_entrega\": 1742009766,\n    \"type\": \"Entregado\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3000/api/loan/actualizar-solicitudes-prestamo",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"loan",
+												"actualizar-solicitudes-prestamo"
 											]
 										}
 									},
