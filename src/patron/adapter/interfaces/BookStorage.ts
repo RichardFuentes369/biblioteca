@@ -1,3 +1,0 @@
-interface BookStorage {
-    getBooks(): Book[];
-}

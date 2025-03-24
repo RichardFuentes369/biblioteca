@@ -11,7 +11,7 @@ export const mysqlProviders = [
         // username: process.env.DATABASEUSERNAME,
         username: "root",
         // password: process.env.DATABASEPASSWORD,
-        password: "9601",
+        password: "",
         // database: process.env.DATABASENAME,
         database: "biblioteca",
         entities: [

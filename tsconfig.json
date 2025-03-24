@@ -21,6 +21,7 @@
       "@module/*": ["./src/mod/*"],
       "@global/*": ["./src/global/*"],
       "@guard/*": ["./src/guard/*"],
+      "@patron/*": ["./src/patron/*"],
     }
   }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<books>
+<Books>
     <book>
         <title>Cien Años de Soledad</title>
         <publisher>Alfaguara</publisher>
@@ -17,7 +17,7 @@
     <book>
         <title>The Great Gatsby</title>
         <publisher>Scribner</publisher>
-        <author>F. Scott Fitzgerald</author>
+        <author>F Scott Fitzgerald</author>
         <year_of_publication>1925</year_of_publication>
         <genre>Fiction</genre>
         <language>English</language>
@@ -128,7 +128,7 @@
     </book>
     <book>
         <title>Brave New World</title>
-        "publisher": "Chatto &amp; Windus",
+        <publisher>Chatto &amp; Windus</publisher>
         <author>Aldous Huxley</author>
         <year_of_publication>1932</year_of_publication>
         <genre>Dystopia</genre>
@@ -140,4 +140,4 @@
         <total>16</total>
         <size_pages>288</size_pages>
     </book>
-</books>
+</Books>

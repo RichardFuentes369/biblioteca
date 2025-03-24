@@ -1,4 +1,4 @@
-interface Book {
+export interface Book {
     title: string;
     publisher: string;
     author: string;

@@ -1,25 +1,29 @@
 import * as fs from 'fs';
-import * as xml2js from 'xml2js'; // npm install xml2js
 
-class XMLAdapter implements BookStorage {
-    private filePath: string;
+import { xml2js } from 'xml-js';
+import { FileAdapter } from './interfaces/FileAdapter';
+import { Book } from './interfaces/Book';
 
-    constructor(filePath: string) {
-        this.filePath = filePath;
-    }
+export class XMLAdapter implements FileAdapter {
+    readFile(filePath: string): Book[] { 
+        const fileContent = fs.readFileSync(filePath, 'utf-8');
+        const result = xml2js(fileContent, { compact: true }); 
 
-    getBooks(): Book[] {
-        const fileContent = fs.readFileSync(this.filePath, 'utf-8');
-        let books: Book[] = [];
-        xml2js.parseString(fileContent, (err, result) => {
-            if (err) throw err;
-            const bookList = result.books.book; // Asumimos estructura <books><book>...</book></books>
-            books = bookList.map((book: any) => ({
-                title: book.title[0],
-                author: book.author[0],
-                year: parseInt(book.year[0], 10),
-            }));
-        });
-        return books;
+        const records = result['Books']['book'];
+
+        return records.map((record: any) => ({
+            title: record['title']?._text || '',
+            publisher: record['publisher']?._text || '',
+            author: record['author']?._text || '',
+            year_of_publication: parseInt(record['year_of_publication']?._text) || 0,
+            genre: record['genre']?._text || '',
+            language: record['language']?._text || '',
+            isbn: record['isbn']?._text || '',
+            inStock: parseInt(record['inStock']?._text) || 0,
+            inLoan: parseInt(record['inLoan']?._text) || 0,
+            damaged: parseInt(record['damaged']?._text) || 0,
+            total: parseInt(record['total']?._text) || 0,
+            size_pages: parseInt(record['size_pages']?._text) || 0,
+        }));
     }
 }
