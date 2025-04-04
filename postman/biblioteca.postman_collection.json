@@ -877,7 +877,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "http://localhost:3000/api/stock/cargue-archivo?extension=csv",
+											"raw": "http://localhost:3000/api/stock/cargue-archivo?extension=xlsx",
 											"protocol": "http",
 											"host": [
 												"localhost"
@@ -891,7 +891,7 @@
 											"query": [
 												{
 													"key": "extension",
-													"value": "csv"
+													"value": "xlsx"
 												}
 											]
 										}
