@@ -39,5 +39,5 @@ export class Stock {
   total: number;
 
   @Column()
-  languague: string;
+  language: string;
 }

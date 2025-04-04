@@ -1,4 +1,4 @@
-import { Inject, Injectable, NotFoundException } from '@nestjs/common';
+import { ConsoleLogger, Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { CreateStockDto } from './dto/create-stock.dto';
 import { UpdateStockDto } from './dto/update-stock.dto';
 import { Like, Repository } from 'typeorm';
@@ -108,7 +108,7 @@ export class StockService {
       "inLoan": result.inLoan,
       "damaged": result.damaged,
       "total": result.total,
-      "languague": result.languague,
+      "language": result.language,
     }
 
     return {
@@ -166,7 +166,7 @@ export class StockService {
       "author": libroGuardado.author, 
       "year_of_publication": libroGuardado.year_of_publication, 
       "genre": libroGuardado.genre, 
-      "languague": libroGuardado.languague, 
+      "language": libroGuardado.language, 
       "isbn": libroGuardado.isbn, 
       "inStock": libroGuardado.inStock, 
       "inLoan": libroGuardado.inLoan, 
@@ -174,7 +174,6 @@ export class StockService {
       "total": libroGuardado.total, 
       "size_pages": libroGuardado.size_pages
     }
-
     return {
       message: 'Libro creado exitosamente',
       result: dataMostrar,
@@ -214,7 +213,7 @@ export class StockService {
       "author": updateStockDto.author, 
       "year_of_publication": updateStockDto.year_of_publication, 
       "genre": updateStockDto.genre, 
-      "languague": updateStockDto.languague, 
+      "language": updateStockDto.language, 
       "isbn": updateStockDto.isbn, 
       "inStock": updateStockDto.inStock, 
       "inLoan": updateStockDto.inLoan, 
@@ -250,6 +249,23 @@ export class StockService {
     return this.stcokReposity.findOne({
       where: [ {title : title}]
     });
+  }
+
+  async almacenamientoMasivo(booksArray){
+
+    let totalRows = JSON.parse(JSON.stringify(booksArray)).length
+
+    await this.stcokReposity
+        .createQueryBuilder()
+        .insert()
+        .into(Stock)
+        .values(booksArray)
+        .execute();
+
+    return {
+      message: 'Libros almacenados exitosamente',
+      result: totalRows,
+    };
   }
 
 }

@@ -1,11 +1,56 @@
 title,publisher,author,year_of_publication,genre,language,isbn,inStock,inLoan,damaged,total,size_pages
-"Cien Años de Soledad",Alfaguara,Gabriel García Márquez,1967,Magical Realism,Spanish,9788420471839,15,5,2,22,576
-"The Great Gatsby",Scribner,F. Scott Fitzgerald,1925,Fiction,English,9780743273565,10,3,1,14,180
-"1984",Secker & Warburg,George Orwell,1949,Dystopia,English,9780451524935,20,8,3,31,328
-"Orgullo y Prejuicio",Penguin,Jane Austen,1813,Romance,English,9780141439518,12,4,0,16,432
-"El Aleph",Emecé,Jorge Luis Borges,1949,Short Stories,Spanish,9789500426329,8,2,1,11,224
-"To Kill a Mockingbird",J.B. Lippincott,Harper Lee,1960,Fiction,English,9780446310789,18,6,2,26,281
-"Don Quijote de la Mancha",Francisco de Robles,Miguel de Cervantes,1605,Adventure,Spanish,9788467032437,14,5,3,22,863
-"The Catcher in the Rye",Little Brown,J.D. Salinger,1951,Fiction,English,9780316769488,9,3,1,13,277
-"La Sombra del Viento",Planeta,Carlos Ruiz Zafón,2001,Mystery,Spanish,9788408051053,16,7,2,25,487
-"Brave New World",Chatto & Windus,Aldous Huxley,1932,Dystopia,English,9780060850524,11,4,1,16,288
+Dune,Chilton Books,Frank Herbert,1965,Science Fiction,English,9780441172719,18,4,1,23,688
+Foundation,Gnome Press,Isaac Asimov,1951,Science Fiction,English,9780553293357,20,3,0,23,256
+The Hitchhiker's Guide to the Galaxy,Pan Books,Douglas Adams,1979,Science Fiction,English,9780345391803,22,2,1,25,224
+The Shining,Doubleday,Stephen King,1977,Horror,English,9780385121675,16,5,1,22,447
+It,Viking Press,Stephen King,1986,Horror,English,9780670813025,19,3,0,22,1138
+The Girl with the Dragon Tattoo,Norstedts Förlag,Stieg Larsson,2005,Crime,Swedish,9789113015501,17,4,1,22,464
+Gone Girl,Crown Publishing Group,Gillian Flynn,2012,Thriller,English,9780307588371,21,2,0,23,432
+The Da Vinci Code,Doubleday,Dan Brown,2003,Thriller,English,9780385504201,13,6,2,21,454
+The Hunger Games,Scholastic Press,Suzanne Collins,2008,Young Adult,English,9780439023481,15,4,1,20,374
+Harry Potter and the Sorcerer's Stone,Bloomsbury Publishing,J.K. Rowling,1997,Fantasy,English,9780747532699,18,2,0,20,223
+The Alchemist,HarperCollins,Paulo Coelho,1988,Fantasy,Portuguese,9780061122415,22,2,1,25,197
+Life of Pi,Knopf Canada,Yann Martel,2001,Adventure,English,9780676973765,14,5,1,20,319
+The Book Thief,Picador,Markus Zusak,2005,Young Adult,English,9780375831003,16,4,2,22,576
+The Help,Amy Einhorn Books,Kathryn Stockett,2009,Historical Fiction,English,9780399155345,20,2,1,23,444
+The Girl on the Train,Doubleday,Paula Hawkins,2015,Thriller,English,9780857522321,12,6,3,21,325
+The Curious Incident of the Dog in the Night-Time,Jonathan Cape,Mark Haddon,2003,Mystery,English,9780099450263,21,2,1,24,226
+The Kite Runner,Riverhead Books,Khaled Hosseini,2003,Historical Fiction,English,9781594480003,13,6,2,21,371
+A Thousand Splendid Suns,Riverhead Books,Khaled Hosseini,2007,Historical Fiction,English,9781594483851,19,3,1,23,400
+Memoirs of a Geisha,Alfred A. Knopf,Arthur Golden,1997,Historical Fiction,English,9780679430147,15,4,1,20,448
+The Pillars of the Earth,William Morrow and Company,Ken Follett,1989,Historical Fiction,English,9780688042415,18,2,0,20,973
+The Shadow of the Wind,Planeta,Carlos Ruiz Zafón,2001,Historical Fiction,Spanish,9788408039233,22,2,1,25,544
+The Time Traveler's Wife,MacAdam/Cage,Audrey Niffenegger,2003,Romance,English,9781932360093,14,5,1,20,518
+The Night Circus,Doubleday,Erin Morgenstern,2011,Fantasy,English,9780385671651,16,4,2,22,387
+The Ocean at the End of the Lane,William Morrow,Neil Gaiman,2013,Fantasy,English,9780062255655,20,2,1,23,181
+American Gods,William Morrow,Neil Gaiman,2001,Fantasy,English,9780380973651,12,6,3,21,465
+Neverwhere,BBC Books,Neil Gaiman,1996,Fantasy,English,9780563382998,17,3,0,20,384
+Good Omens,Workman Publishing,Terry Pratchett and Neil Gaiman,1990,Fantasy,English,9780894808531,21,2,1,24,288
+The Color of Magic,Colin Smythe,Terry Pratchett,1983,Fantasy,English,9780861401166,13,6,2,21,224
+Guards! Guards!,Victor Gollancz,Terry Pratchett,1989,Fantasy,English,9780575044717,19,3,1,23,344
+Mort,Victor Gollancz,Terry Pratchett,1987,Fantasy,English,9780575039485,15,4,1,20,288
+Small Gods,Victor Gollancz,Terry Pratchett,1992,Fantasy,English,9780575052132,18,2,0,20,400
+The Fifth Elephant,Victor Gollancz,Terry Pratchett,1999,Fantasy,English,9780575065422,22,2,1,25,448
+Night Watch,Doubleday,Terry Pratchett,2002,Fantasy,English,9780385603560,14,5,1,20,480
+The Colour of Magic,Colin Smythe,Terry Pratchett,1983,Fantasy,English,9780861401166,16,4,2,22,224
+The Light Fantastic,Colin Smythe,Terry Pratchett,1986,Fantasy,English,9780861402026,20,2,1,23,224
+Equal Rites,Victor Gollancz,Terry Pratchett,1987,Fantasy,English,9780575040412,12,6,3,21,224
+Wyrd Sisters,Victor Gollancz,Terry Pratchett,1988,Fantasy,English,9780575042713,17,3,0,20,352
+Pyramids,Victor Gollancz,Terry Pratchett,1989,Fantasy,English,9780575046292,21,2,1,24,336
+Moving Pictures,Victor Gollancz,Terry Pratchett,1990,Fantasy,English,9780575049385,13,6,2,21,336
+Reaper Man,Victor Gollancz,Terry Pratchett,1991,Fantasy,English,9780575051067,19,3,1,23,352
+Lords and Ladies,Victor Gollancz,Terry Pratchett,1992,Fantasy,English,9780575053214,15,4,1,20,336
+Men at Arms,Victor Gollancz,Terry Pratchett,1993,Fantasy,English,9780575055157,18,2,0,20,384
+Soul Music,Victor Gollancz,Terry Pratchett,1994,Fantasy,English,9780575057632,22,2,1,25,368
+Interesting Times,Victor Gollancz,Terry Pratchett,1994,Fantasy,English,9780575059315,14,5,1,20,352
+Maskerade,Victor Gollancz,Terry Pratchett,1995,Fantasy,English,9780575061288,16,4,2,22,368
+Feet of Clay,Victor Gollancz,Terry Pratchett,1996,Fantasy,English,9780575063343,20,2,1,23,368
+Hogfather,Victor Gollancz,Terry Pratchett,1996,Fantasy,English,9780575065057,12,6,3,21,384
+Jingo,Victor Gollancz,Terry Pratchett,1997,Fantasy,English,9780575066603,17,3,0,20,416
+The Last Continent,Doubleday,Terry Pratchett,1998,Fantasy,English,9780385409392,21,2,1,24,368
+Carpe Jugulum,Doubleday,Terry Pratchett,1998,Fantasy,English,9780385409408,13,6,2,21,384
+The Fifth Elephant,Victor Gollancz,Terry Pratchett,1999,Fantasy,English,9780575065422,19,3,1,23,448
+The Truth,Doubleday,Terry Pratchett,2000,Fantasy,English,9780385600491,15,4,1,20,448
+Thief of Time,Doubleday,Terry Pratchett,2001,Fantasy,English,9780385601276,18,2,0,20,448
+The Amazing Maurice and His Educated Rodents,Doubleday,Terry Pratchett,2001,Fantasy,English,9780385601283,22,2,1,25,368
+Night Watch,Doubleday,Terry Pratchett,2002,Fantasy,English,9780385603560,14,5,1,20,480

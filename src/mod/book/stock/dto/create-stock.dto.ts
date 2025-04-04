@@ -55,7 +55,7 @@ export class CreateStockDto {
     })
     @IsString()
     // @Transform(({value}) => value.trim())
-    readonly languague;
+    readonly language;
 
     @ApiProperty({
         description: 'ISBN -  Identificador único para libros.',

@@ -1,143 +1,689 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Books>
     <book>
-        <title>Cien Años de Soledad</title>
-        <publisher>Alfaguara</publisher>
-        <author>Gabriel García Márquez</author>
-        <year_of_publication>1967</year_of_publication>
-        <genre>Magical Realism</genre>
-        <language>Spanish</language>
-        <isbn>9788420471839</isbn>
-        <inStock>15</inStock>
+        <title>Dune</title>
+        <publisher>Chilton Books</publisher>
+        <author>Frank Herbert</author>
+        <year_of_publication>1965</year_of_publication>
+        <genre>Science Fiction</genre>
+        <language>English</language>
+        <isbn>9780441172719</isbn>
+        <inStock>18</inStock>
+        <inLoan>4</inLoan>
+        <damaged>1</damaged>
+        <total>23</total>
+        <size_pages>688</size_pages>
+    </book>
+    <book>
+        <title>Foundation</title>
+        <publisher>Gnome Press</publisher>
+        <author>Isaac Asimov</author>
+        <year_of_publication>1951</year_of_publication>
+        <genre>Science Fiction</genre>
+        <language>English</language>
+        <isbn>9780553293357</isbn>
+        <inStock>20</inStock>
+        <inLoan>3</inLoan>
+        <damaged>0</damaged>
+        <total>23</total>
+        <size_pages>256</size_pages>
+    </book>
+    <book>
+        <title>The Hitchhiker's Guide to the Galaxy</title>
+        <publisher>Pan Books</publisher>
+        <author>Douglas Adams</author>
+        <year_of_publication>1979</year_of_publication>
+        <genre>Science Fiction</genre>
+        <language>English</language>
+        <isbn>9780345391803</isbn>
+        <inStock>22</inStock>
+        <inLoan>2</inLoan>
+        <damaged>1</damaged>
+        <total>25</total>
+        <size_pages>224</size_pages>
+    </book>
+    <book>
+        <title>The Shining</title>
+        <publisher>Doubleday</publisher>
+        <author>Stephen King</author>
+        <year_of_publication>1977</year_of_publication>
+        <genre>Horror</genre>
+        <language>English</language>
+        <isbn>9780385121675</isbn>
+        <inStock>16</inStock>
         <inLoan>5</inLoan>
+        <damaged>1</damaged>
+        <total>22</total>
+        <size_pages>447</size_pages>
+    </book>
+    <book>
+        <title>It</title>
+        <publisher>Viking Press</publisher>
+        <author>Stephen King</author>
+        <year_of_publication>1986</year_of_publication>
+        <genre>Horror</genre>
+        <language>English</language>
+        <isbn>9780670813025</isbn>
+        <inStock>19</inStock>
+        <inLoan>3</inLoan>
+        <damaged>0</damaged>
+        <total>22</total>
+        <size_pages>1138</size_pages>
+    </book>
+     <book>
+        <title>The Girl with the Dragon Tattoo</title>
+        <publisher>Norstedts Förlag</publisher>
+        <author>Stieg Larsson</author>
+        <year_of_publication>2005</year_of_publication>
+        <genre>Crime</genre>
+        <language>Swedish</language>
+        <isbn>9789113015501</isbn>
+        <inStock>17</inStock>
+        <inLoan>4</inLoan>
+        <damaged>1</damaged>
+        <total>22</total>
+        <size_pages>464</size_pages>
+    </book>
+    <book>
+        <title>Gone Girl</title>
+        <publisher>Crown Publishing Group</publisher>
+        <author>Gillian Flynn</author>
+        <year_of_publication>2012</year_of_publication>
+        <genre>Thriller</genre>
+        <language>English</language>
+        <isbn>9780307588371</isbn>
+        <inStock>21</inStock>
+        <inLoan>2</inLoan>
+        <damaged>0</damaged>
+        <total>23</total>
+        <size_pages>432</size_pages>
+    </book>
+    <book>
+        <title>The Da Vinci Code</title>
+        <publisher>Doubleday</publisher>
+        <author>Dan Brown</author>
+        <year_of_publication>2003</year_of_publication>
+        <genre>Thriller</genre>
+        <language>English</language>
+        <isbn>9780385504201</isbn>
+        <inStock>13</inStock>
+        <inLoan>6</inLoan>
+        <damaged>2</damaged>
+        <total>21</total>
+        <size_pages>454</size_pages>
+    </book>
+    <book>
+        <title>The Hunger Games</title>
+        <publisher>Scholastic Press</publisher>
+        <author>Suzanne Collins</author>
+        <year_of_publication>2008</year_of_publication>
+        <genre>Young Adult</genre>
+        <language>English</language>
+        <isbn>9780439023481</isbn>
+        <inStock>15</inStock>
+        <inLoan>4</inLoan>
+        <damaged>1</damaged>
+        <total>20</total>
+        <size_pages>374</size_pages>
+    </book>
+    <book>
+        <title>Harry Potter and the Sorcerer's Stone</title>
+        <publisher>Bloomsbury Publishing</publisher>
+        <author>J.K. Rowling</author>
+        <year_of_publication>1997</year_of_publication>
+        <genre>Fantasy</genre>
+        <language>English</language>
+        <isbn>9780747532699</isbn>
+        <inStock>18</inStock>
+        <inLoan>2</inLoan>
+        <damaged>0</damaged>
+        <total>20</total>
+        <size_pages>223</size_pages>
+    </book>
+    <book>
+        <title>The Alchemist</title>
+        <publisher>HarperCollins</publisher>
+        <author>Paulo Coelho</author>
+        <year_of_publication>1988</year_of_publication>
+        <genre>Fantasy</genre>
+        <language>Portuguese</language>
+        <isbn>9780061122415</isbn>
+        <inStock>22</inStock>
+        <inLoan>2</inLoan>
+        <damaged>1</damaged>
+        <total>25</total>
+        <size_pages>197</size_pages>
+    </book>
+    <book>
+        <title>Life of Pi</title>
+        <publisher>Knopf Canada</publisher>
+        <author>Yann Martel</author>
+        <year_of_publication>2001</year_of_publication>
+        <genre>Adventure</genre>
+        <language>English</language>
+        <isbn>9780676973765</isbn>
+        <inStock>14</inStock>
+        <inLoan>5</inLoan>
+        <damaged>1</damaged>
+        <total>20</total>
+        <size_pages>319</size_pages>
+    </book>
+    <book>
+        <title>The Book Thief</title>
+        <publisher>Picador</publisher>
+        <author>Markus Zusak</author>
+        <year_of_publication>2005</year_of_publication>
+        <genre>Young Adult</genre>
+        <language>English</language>
+        <isbn>9780375831003</isbn>
+        <inStock>16</inStock>
+        <inLoan>4</inLoan>
         <damaged>2</damaged>
         <total>22</total>
         <size_pages>576</size_pages>
     </book>
     <book>
-        <title>The Great Gatsby</title>
-        <publisher>Scribner</publisher>
-        <author>F Scott Fitzgerald</author>
-        <year_of_publication>1925</year_of_publication>
-        <genre>Fiction</genre>
+        <title>The Help</title>
+        <publisher>Amy Einhorn Books</publisher>
+        <author>Kathryn Stockett</author>
+        <year_of_publication>2009</year_of_publication>
+        <genre>Historical Fiction</genre>
         <language>English</language>
-        <isbn>9780743273565</isbn>
-        <inStock>10</inStock>
-        <inLoan>3</inLoan>
+        <isbn>9780399155345</isbn>
+        <inStock>20</inStock>
+        <inLoan>2</inLoan>
         <damaged>1</damaged>
-        <total>14</total>
-        <size_pages>180</size_pages>
+        <total>23</total>
+        <size_pages>444</size_pages>
     </book>
     <book>
-        <title>1984</title>
-        <publisher>Secker &amp; Warburg</publisher>
-        <author>George Orwell</author>
-        <year_of_publication>1949</year_of_publication>
-        <genre>Dystopia</genre>
+        <title>The Girl on the Train</title>
+        <publisher>Doubleday</publisher>
+        <author>Paula Hawkins</author>
+        <year_of_publication>2015</year_of_publication>
+        <genre>Thriller</genre>
         <language>English</language>
-        <isbn>9780451524935</isbn>
-        <inStock>20</inStock>
-        <inLoan>8</inLoan>
+        <isbn>9780857522321</isbn>
+        <inStock>12</inStock>
+        <inLoan>6</inLoan>
         <damaged>3</damaged>
-        <total>31</total>
+        <total>21</total>
+        <size_pages>325</size_pages>
+    </book>
+    <book>
+        <title>The Lovely Bones</title>
+        <publisher>Little, Brown and Company</publisher>
+        <author>Alice Sebold</author>
+        <year_of_publication>2002</year_of_publication>
+        <genre>Fantasy</genre>
+        <language>English</language>
+        <isbn>9780316666343</isbn>
+        <inStock>17</inStock>
+        <inLoan>3</inLoan>
+        <damaged>0</damaged>
+        <total>20</total>
         <size_pages>328</size_pages>
     </book>
     <book>
-        <title>Orgullo y Prejuicio</title>
-        <publisher>Penguin</publisher>
-        <author>Jane Austen</author>
-        <year_of_publication>1813</year_of_publication>
-        <genre>Romance</genre>
+        <title>The Curious Incident of the Dog in the Night-Time</title>
+        <publisher>Jonathan Cape</publisher>
+        <author>Mark Haddon</author>
+        <year_of_publication>2003</year_of_publication>
+        <genre>Mystery</genre>
         <language>English</language>
-        <isbn>9780141439518</isbn>
-        <inStock>12</inStock>
-        <inLoan>4</inLoan>
-        <damaged>0</damaged>
-        <total>16</total>
-        <size_pages>432</size_pages>
-    </book>
-    <book>
-        <title>El Aleph</title>
-        <publisher>Emecé</publisher>
-        <author>Jorge Luis Borges</author>
-        <year_of_publication>1949</year_of_publication>
-        <genre>Short Stories</genre>
-        <language>Spanish</language>
-        <isbn>9789500426329</isbn>
-        <inStock>8</inStock>
+        <isbn>9780099450263</isbn>
+        <inStock>21</inStock>
         <inLoan>2</inLoan>
         <damaged>1</damaged>
-        <total>11</total>
-        <size_pages>224</size_pages>
+        <total>24</total>
+        <size_pages>226</size_pages>
     </book>
     <book>
-        <title>To Kill a Mockingbird</title>
-        <publisher>J.B. Lippincott</publisher>
-        <author>Harper Lee</author>
-        <year_of_publication>1960</year_of_publication>
-        <genre>Fiction</genre>
+        <title>The Kite Runner</title>
+        <publisher>Riverhead Books</publisher>
+        <author>Khaled Hosseini</author>
+        <year_of_publication>2003</year_of_publication>
+        <genre>Historical Fiction</genre>
         <language>English</language>
-        <isbn>9780446310789</isbn>
-        <inStock>18</inStock>
+        <isbn>9781594480003</isbn>
+        <inStock>13</inStock>
         <inLoan>6</inLoan>
         <damaged>2</damaged>
-        <total>26</total>
-        <size_pages>281</size_pages>
+        <total>21</total>
+        <size_pages>371</size_pages>
     </book>
     <book>
-        <title>Don Quijote de la Mancha</title>
-        <publisher>Francisco de Robles</publisher>
-        <author>Miguel de Cervantes</author>
-        <year_of_publication>1605</year_of_publication>
-        <genre>Adventure</genre>
-        <language>Spanish</language>
-        <isbn>9788467032437</isbn>
-        <inStock>14</inStock>
-        <inLoan>5</inLoan>
-        <damaged>3</damaged>
-        <total>22</total>
-        <size_pages>863</size_pages>
-    </book>
-    <book>
-        <title>The Catcher in the Rye</title>
-        <publisher>Little Brown</publisher>
-        <author>J.D. Salinger</author>
-        <year_of_publication>1951</year_of_publication>
-        <genre>Fiction</genre>
+        <title>A Thousand Splendid Suns</title>
+        <publisher>Riverhead Books</publisher>
+        <author>Khaled Hosseini</author>
+        <year_of_publication>2007</year_of_publication>
+        <genre>Historical Fiction</genre>
         <language>English</language>
-        <isbn>9780316769488</isbn>
-        <inStock>9</inStock>
+        <isbn>9781594483851</isbn>
+        <inStock>19</inStock>
         <inLoan>3</inLoan>
         <damaged>1</damaged>
-        <total>13</total>
-        <size_pages>277</size_pages>
+        <total>23</total>
+        <size_pages>400</size_pages>
     </book>
     <book>
-        <title>La Sombra del Viento</title>
+        <title>Memoirs of a Geisha</title>
+        <publisher>Alfred A. Knopf</publisher>
+        <author>Arthur Golden</author>
+        <year_of_publication>1997</year_of_publication>
+        <genre>Historical Fiction</genre>
+        <language>English</language>
+        <isbn>9780679430147</isbn>
+        <inStock>15</inStock>
+        <inLoan>4</inLoan>
+        <damaged>1</damaged>
+        <total>20</total>
+        <size_pages>448</size_pages>
+    </book>
+    <book>
+        <title>The Pillars of the Earth</title>
+        <publisher>William Morrow and Company</publisher>
+        <author>Ken Follett</author>
+        <year_of_publication>1989</year_of_publication>
+        <genre>Historical Fiction</genre>
+        <language>English</language>
+        <isbn>9780688042415</isbn>
+        <inStock>18</inStock>
+        <inLoan>2</inLoan>
+        <damaged>0</damaged>
+        <total>20</total>
+        <size_pages>973</size_pages>
+    </book>
+    <book>
+        <title>The Shadow of the Wind</title>
         <publisher>Planeta</publisher>
         <author>Carlos Ruiz Zafón</author>
         <year_of_publication>2001</year_of_publication>
-        <genre>Mystery</genre>
+        <genre>Historical Fiction</genre>
         <language>Spanish</language>
-        <isbn>9788408051053</isbn>
-        <inStock>16</inStock>
-        <inLoan>7</inLoan>
-        <damaged>2</damaged>
+        <isbn>9788408039233</isbn>
+        <inStock>22</inStock>
+        <inLoan>2</inLoan>
+        <damaged>1</damaged>
         <total>25</total>
-        <size_pages>487</size_pages>
+        <size_pages>544</size_pages>
     </book>
     <book>
-        <title>Brave New World</title>
-        <publisher>Chatto &amp; Windus</publisher>
-        <author>Aldous Huxley</author>
-        <year_of_publication>1932</year_of_publication>
-        <genre>Dystopia</genre>
+        <title>The Time Traveler's Wife</title>
+        <publisher>MacAdam/Cage</publisher>
+        <author>Audrey Niffenegger</author>
+        <year_of_publication>2003</year_of_publication>
+        <genre>Romance</genre>
         <language>English</language>
-        <isbn>9780060850524</isbn>
-        <inStock>11</inStock>
+        <isbn>9781932360093</isbn>
+        <inStock>14</inStock>
+        <inLoan>5</inLoan>
+        <damaged>1</damaged>
+        <total>20</total>
+        <size_pages>518</size_pages>
+    </book>
+    <book>
+        <title>The Night Circus</title>
+        <publisher>Doubleday</publisher>
+        <author>Erin Morgenstern</author>
+        <year_of_publication>2011</year_of_publication>
+        <genre>Fantasy</genre>
+        <language>English</language>
+        <isbn>9780385671651</isbn>
+        <inStock>16</inStock>
+        <inLoan>4</inLoan>
+        <damaged>2</damaged>
+        <total>22</total>
+        <size_pages>387</size_pages>
+    </book>
+    <book>
+        <title>The Ocean at the End of the Lane</title>
+        <publisher>William Morrow</publisher>
+        <author>Neil Gaiman</author>
+        <year_of_publication>2013</year_of_publication>
+        <genre>Fantasy</genre>
+        <language>English</language>
+        <isbn>9780062255655</isbn>
+        <inStock>20</inStock>
+        <inLoan>2</inLoan>
+        <damaged>1</damaged>
+        <total>23</total>
+        <size_pages>181</size_pages>
+    </book>
+    <book>
+        <title>American Gods</title>
+        <publisher>William Morrow</publisher>
+        <author>Neil Gaiman</author>
+        <year_of_publication>2001</year_of_publication>
+        <genre>Fantasy</genre>
+        <language>English</language>
+        <isbn>9780380973651</isbn>
+        <inStock>12</inStock>
+        <inLoan>6</inLoan>
+        <damaged>3</damaged>
+        <total>21</total>
+        <size_pages>465</size_pages>
+    </book>
+    <book>
+        <title>Neverwhere</title>
+        <publisher>BBC Books</publisher>
+        <author>Neil Gaiman</author>
+        <year_of_publication>1996</year_of_publication>
+        <genre>Fantasy</genre>
+        <language>English</language>
+        <isbn>9780563382998</isbn>
+        <inStock>17</inStock>
+        <inLoan>3</inLoan>
+        <damaged>0</damaged>
+        <total>20</total>
+        <size_pages>384</size_pages>
+    </book>
+    <book>
+        <title>Good Omens</title>
+        <publisher>Workman Publishing</publisher>
+        <author>Terry Pratchett and Neil Gaiman</author>
+        <year_of_publication>1990</year_of_publication>
+        <genre>Fantasy</genre>
+        <language>English</language>
+        <isbn>9780894808531</isbn>
+        <inStock>21</inStock>
+        <inLoan>2</inLoan>
+        <damaged>1</damaged>
+        <total>24</total>
+        <size_pages>288</size_pages>
+    </book>
+    <book>
+        <title>The Color of Magic</title>
+        <publisher>Colin Smythe</publisher>
+        <author>Terry Pratchett</author>
+        <year_of_publication>1983</year_of_publication>
+        <genre>Fantasy</genre>
+        <language>English</language>
+        <isbn>9780861401166</isbn>
+        <inStock>13</inStock>
+        <inLoan>6</inLoan>
+        <damaged>2</damaged>
+        <total>21</total>
+        <size_pages>224</size_pages>
+    </book>
+    <book>
+        <title>Guards! Guards!</title>
+        <publisher>Victor Gollancz</publisher>
+        <author>Terry Pratchett</author>
+        <year_of_publication>1989</year_of_publication>
+        <genre>Fantasy</genre>
+        <language>English</language>
+        <isbn>9780575044717</isbn>
+        <inStock>19</inStock>
+        <inLoan>3</inLoan>
+        <damaged>1</damaged>
+        <total>23</total>
+        <size_pages>344</size_pages>
+    </book>
+    <book>
+        <title>Mort</title>
+        <publisher>Victor Gollancz</publisher>
+        <author>Terry Pratchett</author>
+        <year_of_publication>1987</year_of_publication>
+        <genre>Fantasy</genre>
+        <language>English</language>
+        <isbn>9780575039485</isbn>
+        <inStock>15</inStock>
         <inLoan>4</inLoan>
         <damaged>1</damaged>
-        <total>16</total>
+        <total>20</total>
         <size_pages>288</size_pages>
+    </book>
+    <book>
+        <title>Small Gods</title>
+        <publisher>Victor Gollancz</publisher>
+        <author>Terry Pratchett</author>
+        <year_of_publication>1992</year_of_publication>
+        <genre>Fantasy</genre>
+        <language>English</language>
+        <isbn>9780575052132</isbn>
+        <inStock>18</inStock>
+        <inLoan>2</inLoan>
+        <damaged>0</damaged>
+        <total>20</total>
+        <size_pages>400</size_pages>
+    </book>
+    <book>
+        <title>The Fifth Elephant</title>
+        <publisher>Victor Gollancz</publisher>
+        <author>Terry Pratchett</author>
+        <year_of_publication>1999</year_of_publication>
+        <genre>Fantasy</genre>
+        <language>English</language>
+        <isbn>9780575065422</isbn>
+        <inStock>22</inStock>
+        <inLoan>2</inLoan>
+        <damaged>1</damaged>
+        <total>25</total>
+        <size_pages>448</size_pages>
+    </book>
+    <book>
+        <title>Night Watch</title>
+        <publisher>Doubleday</publisher>
+        <author>Terry Pratchett</author>
+        <year_of_publication>2002</year_of_publication>
+        <genre>Fantasy</genre>
+        <language>English</language>
+        <isbn>9780385603560</isbn>
+        <inStock>14</inStock>
+        <inLoan>5</inLoan>
+        <damaged>1</damaged>
+        <total>20</total>
+        <size_pages>480</size_pages>
+    </book>
+    <book>
+        <title>The Colour of Magic</title>
+        <publisher>Colin Smythe</publisher>
+        <author>Terry Pratchett</author>
+        <year_of_publication>1983</year_of_publication>
+        <genre>Fantasy</genre>
+        <language>English</language>
+        <isbn>9780861401166</isbn>
+        <inStock>16</inStock>
+        <inLoan>4</inLoan>
+        <damaged>2</damaged>
+        <total>22</total>
+        <size_pages>224</size_pages>
+    </book>
+    <book>
+        <title>The Light Fantastic</title>
+        <publisher>Colin Smythe</publisher>
+        <author>Terry Pratchett</author>
+        <year_of_publication>1986</year_of_publication>
+        <genre>Fantasy</genre>
+        <language>English</language>
+        <isbn>9780861402026</isbn>
+        <inStock>20</inStock>
+        <inLoan>2</inLoan>
+        <damaged>1</damaged>
+        <total>23</total>
+        <size_pages>224</size_pages>
+    </book>
+    <book>
+        <title>Equal Rites</title>
+        <publisher>Victor Gollancz</publisher>
+        <author>Terry Pratchett</author>
+        <year_of_publication>1987</year_of_publication>
+        <genre>Fantasy</genre>
+        <language>English</language>
+        <isbn>9780575040412</isbn>
+        <inStock>12</inStock>
+        <inLoan>6</inLoan>
+        <damaged>3</damaged>
+        <total>21</total>
+        <size_pages>224</size_pages>
+    </book>
+    <book>
+        <title>Wyrd Sisters</title>
+        <publisher>Victor Gollancz</publisher>
+        <author>Terry Pratchett</author>
+        <year_of_publication>1988</year_of_publication>
+        <genre>Fantasy</genre>
+        <language>English</language>
+        <isbn>9780575042713</isbn>
+        <inStock>17</inStock>
+        <inLoan>3</inLoan>
+        <damaged>0</damaged>
+        <total>20</total>
+        <size_pages>352</size_pages>
+    </book>
+    <book>
+        <title>Pyramids</title>
+        <publisher>Victor Gollancz</publisher>
+        <author>Terry Pratchett</author>
+        <year_of_publication>1989</year_of_publication>
+        <genre>Fantasy</genre>
+        <language>English</language>
+        <isbn>9780575046292</isbn>
+        <inStock>21</inStock>
+        <inLoan>2</inLoan>
+        <damaged>1</damaged>
+        <total>24</total>
+        <size_pages>336</size_pages>
+    </book>
+    <book>
+        <title>Moving Pictures</title>
+        <publisher>Victor Gollancz</publisher>
+        <author>Terry Pratchett</author>
+        <year_of_publication>1990</year_of_publication>
+        <genre>Fantasy</genre>
+        <language>English</language>
+        <isbn>9780575049385</isbn>
+        <inStock>13</inStock>
+        <inLoan>6</inLoan>
+        <damaged>2</damaged>
+        <total>21</total>
+        <size_pages>336</size_pages>
+    </book>
+    <book>
+        <title>Reaper Man</title>
+        <publisher>Victor Gollancz</publisher>
+        <author>Terry Pratchett</author>
+        <year_of_publication>1991</year_of_publication>
+        <genre>Fantasy</genre>
+        <language>English</language>
+        <isbn>9780575051067</isbn>
+        <inStock>19</inStock>
+        <inLoan>3</inLoan>
+        <damaged>1</damaged>
+        <total>23</total>
+        <size_pages>352</size_pages>
+    </book>
+    <book>
+        <title>Lords and Ladies</title>
+        <publisher>Victor Gollancz</publisher>
+        <author>Terry Pratchett</author>
+        <year_of_publication>1992</year_of_publication>
+        <genre>Fantasy</genre>
+        <language>English</language>
+        <isbn>9780575053214</isbn>
+        <inStock>15</inStock>
+        <inLoan>4</inLoan>
+        <damaged>1</damaged>
+        <total>20</total>
+        <size_pages>336</size_pages>
+    </book>
+    <book>
+        <title>Men at Arms</title>
+        <publisher>Victor Gollancz</publisher>
+        <author>Terry Pratchett</author>
+        <year_of_publication>1993</year_of_publication>
+        <genre>Fantasy</genre>
+        <language>English</language>
+        <isbn>9780575055157</isbn>
+        <inStock>18</inStock>
+        <inLoan>2</inLoan>
+        <damaged>0</damaged>
+        <total>20</total>
+        <size_pages>384</size_pages>
+    </book>
+    <book>
+        <title>Soul Music</title>
+        <publisher>Victor Gollancz</publisher>
+        <author>Terry Pratchett</author>
+        <year_of_publication>1994</year_of_publication>
+        <genre>Fantasy</genre>
+        <language>English</language>
+        <isbn>9780575057632</isbn>
+        <inStock>22</inStock>
+        <inLoan>2</inLoan>
+        <damaged>1</damaged>
+        <total>25</total>
+        <size_pages>368</size_pages>
+    </book>
+    <book>
+        <title>Interesting Times</title>
+        <publisher>Victor Gollancz</publisher>
+        <author>Terry Pratchett</author>
+        <year_of_publication>1994</year_of_publication>
+        <genre>Fantasy</genre>
+        <language>English</language>
+        <isbn>9780575059315</isbn>
+        <inStock>14</inStock>
+        <inLoan>5</inLoan>
+        <damaged>1</damaged>
+        <total>20</total>
+        <size_pages>352</size_pages>
+    </book>
+    <book>
+        <title>Feet of Clay</title>
+        <publisher>Victor Gollancz</publisher>
+        <author>Terry Pratchett</author>
+        <year_of_publication>1996</year_of_publication>
+        <genre>Fantasy</genre>
+        <language>English</language>
+        <isbn>9780575063343</isbn>
+        <inStock>20</inStock>
+        <inLoan>2</inLoan>
+        <damaged>1</damaged>
+        <total>23</total>
+        <size_pages>368</size_pages>
+    </book>
+    <book>
+        <title>Hogfather</title>
+        <publisher>Victor Gollancz</publisher>
+        <author>Terry Pratchett</author>
+        <year_of_publication>1996</year_of_publication>
+        <genre>Fantasy</genre>
+        <language>English</language>
+        <isbn>9780575065057</isbn>
+        <inStock>12</inStock>
+        <inLoan>6</inLoan>
+        <damaged>3</damaged>
+        <total>21</total>
+        <size_pages>384</size_pages>
+    </book>
+    <book>
+        <title>Jingo</title>
+        <publisher>Victor Gollancz</publisher>
+        <author>Terry Pratchett</author>
+        <year_of_publication>1997</year_of_publication>
+        <genre>Fantasy</genre>
+        <language>English</language>
+        <isbn>9780575066603</isbn>
+        <inStock>17</inStock>
+        <inLoan>3</inLoan>
+        <damaged>0</damaged>
+        <total>20</total>
+        <size_pages>416</size_pages>
+    </book>
+    <book>
+        <title>The Last Continent</title>
+        <publisher>Doubleday</publisher>
+        <author>Terry Pratchett</author>
+        <year_of_publication>1998</year_of_publication>
+        <genre>Fantasy</genre>
+        <language>English</language>
+        <isbn>9780385409392</isbn>
+        <inStock>21</inStock>
+        <inLoan>2</inLoan>
+        <damaged>1</damaged>
+        <total>24</total>
+        <size_pages>368</size_pages>
     </book>
 </Books>
