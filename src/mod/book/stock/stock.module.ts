@@ -5,6 +5,7 @@ import { stokProvider } from './entities/stock.provider';
 import { StockService } from './stock.service';
 import { StockController } from './stock.controller';
 import { AdapterUploadAnyFileBookService as AUAFB } from '@patron/adapter/service/adapter.service';
+import { BuilderSearchService as BSS } from '@patron/builder/service/builder.service';
 
 @Module({
     imports: [
@@ -14,7 +15,8 @@ import { AdapterUploadAnyFileBookService as AUAFB } from '@patron/adapter/servic
     providers: [
       ...stokProvider,
       StockService,
-      AUAFB
+      AUAFB,
+      BSS
     ],
     exports: [
       StockService

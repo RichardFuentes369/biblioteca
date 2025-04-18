@@ -6,6 +6,7 @@ import { Stock } from './entities/stock.entity';
 import { PaginationDto } from '@global/dto/pagination.dto';
 import { FilterAnyFieldDto } from '@global/dto/filter-any-field.dto';
 import { FilterForId } from '@global/dto/filter-for-id.dto';
+import { FilterBookDto } from './dto/filter-book.dto';
 
 @Injectable()
 export class StockService {
@@ -266,6 +267,100 @@ export class StockService {
       message: 'Libros almacenados exitosamente',
       result: totalRows,
     };
+  }
+
+  async findAllWithFilters(query: FilterBookDto){
+
+    const { limit, page, field = 'id' , order = 'Asc' } = query
+    
+    if(!query.page && !query.limit) throw new NotFoundException(`
+      Recuerde que debe enviar los parametros page, limit
+    `)
+
+    if(field == '') throw new NotFoundException(`Debe enviar el campo por el que desea filtrar`)
+    if(!query.page) throw new NotFoundException(`Debe enviar el parametro page`)
+    if(!query.limit) throw new NotFoundException(`Debe enviar el parametro limit`)
+
+    if(field != ''){
+      const propiedades = this.listarPropiedadesTabla(this.stcokReposity)
+      const arratResult = propiedades.filter(obj => obj === field).length
+  
+      if(arratResult == 0) throw new NotFoundException(`El parametro de busqueda ${field} no existe en la base de datos`)
+    }
+    
+    const skipeReal = (page == 1) ? 0 : (page - 1) * limit
+
+    const where: any = {};
+
+    if(query.title !== undefined && query.title){
+      where.title = Like(`%${query.title}%`)
+    }
+    if(query.publisher !== undefined && query.publisher){
+      where.publisher = Like(`%${query.publisher}%`)
+    }    
+    if(query.author !== undefined && query.author){
+      where.author = Like(`%${query.author}%`)
+    }
+    if(query.year_of_publication !== undefined && query.year_of_publication){
+      where.year_of_publication = Like(`%${query.year_of_publication}%`)
+    }
+    if(query.genre !== undefined && query.genre){
+      where.genre = Like(`%${query.genre}%`)
+    }
+    if(query.isbn !== undefined && query.isbn){
+      where.isbn = Like(`%${query.isbn}%`)
+    }
+    if(query.inStock !== undefined && query.inStock){
+      where.inStock = Like(`%${query.inStock}%`)
+    }
+    if(query.inLoan !== undefined && query.inLoan){
+      where.inLoan = Like(`%${query.inLoan}%`)
+    }
+    if(query.damaged !== undefined && query.damaged){
+      where.damaged = Like(`%${query.damaged}%`)
+    }
+    if(query.total !== undefined && query.total){
+      where.total = Like(`%${query.total}%`)
+    }
+    if(query.size_pages !== undefined && query.size_pages){
+      where.size_pages = Like(`%${query.size_pages}%`)
+    }
+    if(query.language !== undefined && query.language){
+      where.language = Like(`%${query.language}%`)
+    }
+    
+    const peticion = async (page) => {
+      return await this.stcokReposity.find({
+        skip: page,
+        take: limit,
+        where: where, 
+        order: {
+          [field]: order
+        }
+      })
+    }
+
+    const totalRecords = async () => {
+      return await this.stcokReposity.count({
+        where: where
+      })
+    }
+
+    return [{
+      'result':  await peticion(skipeReal),
+      'pagination': {
+        'page': page,
+        'perPage': limit,
+        'previou': (page == 1) ? null : page-1,
+        'next': (await peticion(page*limit)).length == 0 ? null : page+1 ,
+        'totalRecord': await totalRecords()
+      },
+      'order':{
+        'order': order,
+        'field': field
+      }
+    }]
+
   }
 
 }

@@ -11,14 +11,17 @@ import { FilterAnyFieldDto } from '@global/dto/filter-any-field.dto';
 import { FilterForId } from '@global/dto/filter-for-id.dto';
 
 import { AdapterUploadAnyFileBookService as AUAFB } from '@patron/adapter/service/adapter.service';
+import { BuilderSearchService as BSS } from '@patron/builder/service/builder.service';
 import { AdminGuard } from '@guard/admin/admin.guard'
 import { FinalGuard } from '@guard/final/final.guard'
+import { FilterBookDto } from './dto/filter-book.dto';
 
 @Controller('stock')
 export class StockController {
   constructor(
     private readonly stockService: StockService,
-    private readonly auafb: AUAFB
+    private readonly auafb: AUAFB,
+    private readonly bss: BSS,
   ) {}
 
     @ApiTags('stock')
@@ -62,11 +65,24 @@ export class StockController {
       return this.stockService.findOne(filterForId);
     }
 
+
+    // patrones
+
+    // adapter
+    // cargar archivos xls, json, csv, xml
+    // para poblar la tabla de libros
     @ApiTags('stock')
     @Get('cargue-archivo')
     fileupload(@Query() optionfile: FileOption) {
       return this.auafb.cargaDataLibros(optionfile);
     }
-   
+
+    // builder
+    // buscar libro por criterio
+    @ApiTags('stock')
+    @Get('busqueda-libro')
+    searchFilter(@Query() filterBookDto: FilterBookDto) {
+      return this.bss.busquedaLibro(filterBookDto);
+    }
 
 }
