@@ -1,6 +1,7 @@
+import { ISearchBookBuilder } from "../interfaces/SearchBookBuilder.interface";
 import { SearchBook } from "./SearchBook";
 
-export class SearchBookBuilder {
+export class SearchBookBuilder implements ISearchBookBuilder{
     title?: string;
     publisher?: string;
     author?: string;
