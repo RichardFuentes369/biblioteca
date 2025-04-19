@@ -643,7 +643,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "localhost:3000/api/stock/filtro-stock?fields=id|languague|author&values=257|English|Harper Lee&page=1&limit=10&field=id&order=asc",
+											"raw": "localhost:3000/api/stock/filtro-stock?fields=id|language&values=1|English&page=1&limit=10&field=id&order=asc",
 											"host": [
 												"localhost"
 											],
@@ -656,11 +656,11 @@
 											"query": [
 												{
 													"key": "fields",
-													"value": "id|languague|author"
+													"value": "id|language"
 												},
 												{
 													"key": "values",
-													"value": "257|English|Harper Lee"
+													"value": "1|English"
 												},
 												{
 													"key": "page",
@@ -692,7 +692,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "localhost:3000/api/stock/obtener-stock?id=256",
+											"raw": "localhost:3000/api/stock/obtener-stock?id=6",
 											"host": [
 												"localhost"
 											],
@@ -705,7 +705,7 @@
 											"query": [
 												{
 													"key": "id",
-													"value": "256"
+													"value": "6"
 												}
 											]
 										}
@@ -1020,7 +1020,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"libro_id\": 171,\n    \"usuario_final_id\": 1\n}",
+											"raw": "{\n    \"libro_id\": 11,\n    \"usuario_final_id\": 1\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -1168,7 +1168,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"id\": 98,\n    \"usuario_biblioteca_id\": 2,\n    \"fecha_prestamo\": 1742009766,\n    \"fecha_entrega\": 1742009766,\n    \"type\": \"Entregado\"\n}",
+											"raw": "{\n    \"id\": 4,\n    \"usuario_biblioteca_id\": 1,\n    \"fecha_prestamo\": 1742009766,\n    \"fecha_entrega\": 1742009766,\n    \"type\": \"Prestado\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -1193,6 +1193,170 @@
 							]
 						}
 					]
+				}
+			]
+		},
+		{
+			"name": "Patron",
+			"item": [
+				{
+					"name": "adapter-cargue-archivo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/stock/cargue-archivo?extension=xml",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"stock",
+								"cargue-archivo"
+							],
+							"query": [
+								{
+									"key": "extension",
+									"value": "xml"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "builder-busqueda-criterio-libro",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/stock/busqueda-libro?limit=5&page=1&order=asc&field=id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"stock",
+								"busqueda-libro"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "The Name of the Wind",
+									"disabled": true
+								},
+								{
+									"key": "publisher",
+									"value": "DAW Books",
+									"disabled": true
+								},
+								{
+									"key": "author",
+									"value": "Patrick Rothfuss",
+									"disabled": true
+								},
+								{
+									"key": "year_of_publication",
+									"value": "2007",
+									"disabled": true
+								},
+								{
+									"key": "genre",
+									"value": "Fantasy",
+									"disabled": true
+								},
+								{
+									"key": "isbn",
+									"value": "9780756404079",
+									"disabled": true
+								},
+								{
+									"key": "inStock",
+									"value": "16",
+									"disabled": true
+								},
+								{
+									"key": "inLoan",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "damaged",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "total",
+									"value": "22",
+									"disabled": true
+								},
+								{
+									"key": "size_pages",
+									"value": "662",
+									"disabled": true
+								},
+								{
+									"key": "language",
+									"value": "English",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "order",
+									"value": "asc"
+								},
+								{
+									"key": "field",
+									"value": "id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "singleton-prestamos-permitidos-por-usuario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/stock/prestamos-permitidos-por-usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"stock",
+								"prestamos-permitidos-por-usuario"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}

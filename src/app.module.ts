@@ -20,6 +20,7 @@ import {
   StockModule,
   LoanModule,
 } from './mod/index'
+import { BookLoanAllow } from '@patron/singleton/class/BookLoan';
 
 @Module({
   imports: [
@@ -56,6 +57,9 @@ export class AppModule {
   constructor(){
     // console.log(__dirname, '/i18n/es')
     // console.log(process.env)
+    const configuracionInicial = BookLoanAllow.getInstancia()
+    configuracionInicial.setCantidadMaxima(3)
   }
+
 
 }

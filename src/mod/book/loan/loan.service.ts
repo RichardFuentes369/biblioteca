@@ -10,6 +10,7 @@ import { Loan } from './entities/loan.entity'
 import { PaginationDto } from '@global/dto/pagination.dto';
 import { FilterAnyFieldDto } from '@global/dto/filter-any-field.dto';
 import { AdminService } from '@module/user/admin/user/admin.service';
+import { BookLoanAllow } from '@patron/singleton/class/BookLoan';
 
 @Injectable()
 export class LoanService {
@@ -50,7 +51,8 @@ export class LoanService {
 
   async create(createLoanDto: CreateLoanDto) {
 
-    const limiteLibrosPrestamoPorUsuario = process.env.CANTIDAD_LIMITE_DE_PRESTAMO
+    let moduloPrestamo = BookLoanAllow.getInstancia()
+    let limiteLibrosPrestamoPorUsuario = moduloPrestamo.getCantidadMaxima()
 
     let resultUserId = await this.userService.findOne({id: createLoanDto.usuario_final_id})
 
@@ -73,9 +75,9 @@ export class LoanService {
     let cantidadEntregado = await this.prestamosHechosPorUsuario(resultUserId.result.id, loanStatus.Entregado)
     
     
-    if(cantidadPrestado >= parseInt(limiteLibrosPrestamoPorUsuario)){
+    if(cantidadPrestado >= limiteLibrosPrestamoPorUsuario){
       throw new NotFoundException(`
-        Lo sentimos, no se puede realizar la solicitud de prestamo, usted ya alcanzo el limite de prestamos que es de (${parseInt(limiteLibrosPrestamoPorUsuario)}).
+        Lo sentimos, no se puede realizar la solicitud de prestamo, usted ya alcanzo el limite de prestamos que es de (${limiteLibrosPrestamoPorUsuario}).
         Si necesita el libro ${resultLibroId.result.title} con urgencia, 
         le invitamos a devolver algun libro de los que en este momento tiene y realizar nuevamente la solicitud de prestamo.
       `);

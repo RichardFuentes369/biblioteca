@@ -21,7 +21,7 @@ export class StockController {
   constructor(
     private readonly stockService: StockService,
     private readonly auafb: AUAFB,
-    private readonly bss: BSS,
+    private readonly bss: BSS
   ) {}
 
     @ApiTags('stock')
@@ -83,6 +83,14 @@ export class StockController {
     @Get('busqueda-libro')
     searchFilter(@Query() filterBookDto: FilterBookDto) {
       return this.bss.busquedaLibro(filterBookDto);
+    }
+
+    // singleton
+    // buscar maxima cantidad libros permitidos a prestar
+    @ApiTags('stock')
+    @Get('prestamos-permitidos-por-usuario')
+    allowLoanForUser() {
+      return this.stockService.allowLoanForUser();
     }
 
 }

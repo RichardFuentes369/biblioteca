@@ -7,6 +7,7 @@ import { PaginationDto } from '@global/dto/pagination.dto';
 import { FilterAnyFieldDto } from '@global/dto/filter-any-field.dto';
 import { FilterForId } from '@global/dto/filter-for-id.dto';
 import { FilterBookDto } from './dto/filter-book.dto';
+import { BookLoanAllow } from '@patron/singleton/class/BookLoan';
 
 @Injectable()
 export class StockService {
@@ -362,5 +363,16 @@ export class StockService {
     }]
 
   }
+
+  async allowLoanForUser(){
+    let moduloPrestamo = BookLoanAllow.getInstancia()
+    let limiteLibrosPrestamoPorUsuario = moduloPrestamo.getCantidadMaxima()
+
+    return {
+      message: 'Maxima cantidad de libros permitidos de prestamo por usuario',
+      result: limiteLibrosPrestamoPorUsuario,
+    };
+  }
+
 
 }
